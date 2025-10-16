@@ -1,0 +1,238 @@
+/* LIQUID GLASS HEADER - macOS Tahoe Style */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  height: 80px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+  transition: all 0.3s ease;
+}
+
+.glassEffect {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  filter: url(#glass-distortion);
+
+  pointer-events: none;
+}
+
+.glassTint {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  text-decoration: none;
+
+  font-weight: 700;
+  font-size: 1.5rem;
+
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logoText {
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.logoAccent {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLink {
+  position: relative;
+  padding: 0.5rem 1rem;
+
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+  transition: all 0.3s ease;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+
+  width: 80%;
+  height: 2px;
+
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.navLink:hover {
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.navLink:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+
+  width: 32px;
+  height: 28px;
+  padding: 0;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  z-index: 1001;
+}
+
+.hamburgerLine {
+  width: 100%;
+  height: 3px;
+
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 2px;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  transform-origin: center;
+}
+
+.hamburger:hover .hamburgerLine {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.hamburgerLine:nth-child(1).hamburgerLineActive {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburgerLine:nth-child(2).hamburgerLineActive {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburgerLine:nth-child(3).hamburgerLineActive {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .header {
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glassTint {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .header {
+    height: 70px;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .desktopNav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .logoAccent {
+    font-size: 1rem;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .logo,
+  .navLink,
+  .navLink::after,
+  .hamburgerLine {
+    transition: none;
+  }
+
+  .logo:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,250 @@
+/* LIQUID GLASS MOBILE MENU - macOS Tahoe Style */
+
+/* Backdrop overlay */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.backdropOpen {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Mobile menu panel */
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  width: 85%;
+  max-width: 400px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow:
+    -4px 0 24px rgba(0, 0, 0, 0.2),
+    inset 1px 0 0 rgba(255, 255, 255, 0.3);
+
+  transform: translateX(100%);
+  opacity: 0;
+
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  overflow-y: auto;
+}
+
+.menuOpen {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Glass effect layers */
+.glassEffect {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  filter: url(#glass-distortion);
+
+  pointer-events: none;
+}
+
+.glassTint {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  pointer-events: none;
+}
+
+/* Menu content */
+.menuContent {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  padding: 2rem 1.5rem;
+}
+
+.menuHeader {
+  margin-bottom: 2rem;
+  padding-top: 70px;
+}
+
+.menuTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation list */
+.navList {
+  flex: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.navItem {
+  opacity: 0;
+  animation: slideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.menuOpen .navItem {
+  animation: slideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+  background: rgba(255, 255, 255, 0.05);
+
+  transition: all 0.3s ease;
+}
+
+.navLink:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+
+  transform: translateX(8px);
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.navLink:active {
+  transform: translateX(8px) scale(0.98);
+}
+
+/* Menu footer */
+.menuFooter {
+  margin-top: auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+  text-align: center;
+}
+
+.footerText {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+.footerSubtext {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .menu {
+    background: rgba(0, 0, 0, 0.4);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glassTint {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .navLink {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .navLink:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .backdrop,
+  .menu,
+  .navLink {
+    transition: none;
+  }
+
+  .navItem {
+    animation: none;
+    opacity: 1;
+  }
+
+  .navLink:hover {
+    transform: none;
+  }
+
+  .navLink:active {
+    transform: none;
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 480px) {
+  .menu {
+    width: 100%;
+    max-width: none;
+  }
+
+  .menuContent {
+    padding: 1.5rem 1rem;
+  }
+}
