@@ -1,52 +1,118 @@
-/* MDVS Agency - Liquid Glass Design System Variables */
+/* ============================================
+   LIQUID GLASS DESIGN SYSTEM - PURE GLASS
+   Multiple Palette Options
+   ============================================ */
 
 :root {
   /* ============================================
-     BRAND COLORS - MDVS Agency
+     PALETTE OPTIONS - Choose one via data-palette attribute
      ============================================ */
-  --brand-yellow: #f4d03f;
-  --brand-yellow-light: #f9e79f;
-  --brand-yellow-dark: #d4a017;
-  --brand-white: #ffffff;
-  --brand-black: #1a1a1a;
-  --brand-gray: #2c2c2c;
+
+  /* PALETTE 1: PURE GLASS (Default) - Clean & Minimal */
+  --palette-pure-bg-light: rgba(255, 255, 255, 0.25);
+  --palette-pure-overlay-light: rgba(255, 255, 255, 0.15);
+  --palette-pure-highlight-light: rgba(255, 255, 255, 0.75);
+  --palette-pure-border-light: rgba(255, 255, 255, 0.3);
+  --palette-pure-text-light: #1a1a1a;
+
+  --palette-pure-bg-dark: rgba(0, 0, 0, 0.25);
+  --palette-pure-overlay-dark: rgba(0, 0, 0, 0.15);
+  --palette-pure-highlight-dark: rgba(255, 255, 255, 0.15);
+  --palette-pure-border-dark: rgba(255, 255, 255, 0.2);
+  --palette-pure-text-dark: #ffffff;
+
+  /* PALETTE 2: FROST - Cool Blue Tint */
+  --palette-frost-bg-light: rgba(200, 220, 255, 0.3);
+  --palette-frost-overlay-light: rgba(200, 220, 255, 0.2);
+  --palette-frost-highlight-light: rgba(220, 235, 255, 0.8);
+  --palette-frost-border-light: rgba(180, 210, 255, 0.4);
+  --palette-frost-text-light: #0a1929;
+
+  --palette-frost-bg-dark: rgba(10, 25, 47, 0.35);
+  --palette-frost-overlay-dark: rgba(20, 40, 70, 0.25);
+  --palette-frost-highlight-dark: rgba(150, 180, 220, 0.2);
+  --palette-frost-border-dark: rgba(100, 150, 220, 0.25);
+  --palette-frost-text-dark: #e3f2fd;
+
+  /* PALETTE 3: SMOKE - Warm Gray Tint */
+  --palette-smoke-bg-light: rgba(240, 240, 245, 0.3);
+  --palette-smoke-overlay-light: rgba(230, 230, 235, 0.2);
+  --palette-smoke-highlight-light: rgba(250, 250, 255, 0.8);
+  --palette-smoke-border-light: rgba(200, 200, 210, 0.4);
+  --palette-smoke-text-light: #1a1a1f;
+
+  --palette-smoke-bg-dark: rgba(20, 20, 25, 0.3);
+  --palette-smoke-overlay-dark: rgba(30, 30, 35, 0.2);
+  --palette-smoke-highlight-dark: rgba(180, 180, 190, 0.15);
+  --palette-smoke-border-dark: rgba(150, 150, 160, 0.2);
+  --palette-smoke-text-dark: #f5f5f7;
+
+  /* PALETTE 4: ACCENT (Yellow) - Branded Option */
+  --palette-accent-bg-light: rgba(255, 250, 230, 0.3);
+  --palette-accent-overlay-light: rgba(244, 208, 63, 0.12);
+  --palette-accent-highlight-light: rgba(249, 231, 159, 0.6);
+  --palette-accent-border-light: rgba(244, 208, 63, 0.3);
+  --palette-accent-text-light: #1a1a1a;
+  --palette-accent-color: #f4d03f;
+
+  --palette-accent-bg-dark: rgba(26, 26, 26, 0.35);
+  --palette-accent-overlay-dark: rgba(26, 26, 26, 0.25);
+  --palette-accent-highlight-dark: rgba(244, 208, 63, 0.15);
+  --palette-accent-border-dark: rgba(244, 208, 63, 0.2);
+  --palette-accent-text-dark: #ffffff;
 
   /* ============================================
-     LIGHT MODE - Yellow Glass Theme
+     ACTIVE PALETTE (Default: Pure Glass Dark)
      ============================================ */
-  --glass-bg-light: rgba(244, 208, 63, 0.15);
-  --glass-overlay-light: rgba(244, 208, 63, 0.25);
-  --glass-highlight-light: rgba(249, 231, 159, 0.8);
-  --glass-text-light: #1a1a1a;
-  --glass-shadow-light: 0 8px 32px rgba(244, 208, 63, 0.3);
-  --glass-border-light: rgba(244, 208, 63, 0.4);
+  --glass-bg: var(--palette-pure-bg-dark);
+  --glass-overlay: var(--palette-pure-overlay-dark);
+  --glass-highlight: var(--palette-pure-highlight-dark);
+  --glass-border: var(--palette-pure-border-dark);
+  --glass-text: var(--palette-pure-text-dark);
 
   /* ============================================
-     DARK MODE - Inverted Yellow Glass Theme
+     BASE COLORS
      ============================================ */
-  --glass-bg-dark: rgba(26, 26, 26, 0.35);
-  --glass-overlay-dark: rgba(26, 26, 26, 0.45);
-  --glass-highlight-dark: rgba(244, 208, 63, 0.25);
-  --glass-text-dark: #f4d03f;
-  --glass-shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.6);
-  --glass-border-dark: rgba(244, 208, 63, 0.2);
+  --color-white: #ffffff;
+  --color-black: #1a1a1a;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
 
   /* ============================================
      GLASS EFFECTS
      ============================================ */
   --glass-blur: 8px;
   --glass-blur-light: 4px;
+  --glass-blur-medium: 6px;
   --glass-blur-strong: 12px;
   --glass-blur-extra-strong: 16px;
   --glass-distortion-scale: 77;
+  --glass-distortion-scale-subtle: 50;
+  --glass-distortion-scale-strong: 100;
+
+  /* Shadows - Subtle & Elegant */
+  --glass-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --glass-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --glass-shadow-md: 0 6px 24px rgba(0, 0, 0, 0.16);
+  --glass-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --glass-shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.24);
 
   /* ============================================
      BORDER RADIUS
      ============================================ */
-  --glass-border-radius: 24px;
+  --glass-border-radius: 20px;
   --glass-border-radius-medium: 16px;
   --glass-border-radius-small: 12px;
   --glass-border-radius-tiny: 8px;
+  --glass-border-radius-full: 9999px;
 
   /* ============================================
      TRANSITIONS & ANIMATIONS
@@ -65,6 +131,7 @@
   --spacing-xl: 32px;
   --spacing-2xl: 48px;
   --spacing-3xl: 64px;
+  --spacing-4xl: 96px;
 
   /* ============================================
      TYPOGRAPHY
@@ -75,16 +142,16 @@
   --font-family-mono:
     'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
 
-  --font-size-xs: 0.75rem; /* 12px */
-  --font-size-sm: 0.875rem; /* 14px */
-  --font-size-base: 1rem; /* 16px */
-  --font-size-lg: 1.125rem; /* 18px */
-  --font-size-xl: 1.25rem; /* 20px */
-  --font-size-2xl: 1.5rem; /* 24px */
-  --font-size-3xl: 1.875rem; /* 30px */
-  --font-size-4xl: 2.25rem; /* 36px */
-  --font-size-5xl: 3rem; /* 48px */
-  --font-size-6xl: 3.75rem; /* 60px */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
 
   --font-weight-normal: 400;
   --font-weight-medium: 500;
@@ -94,37 +161,6 @@
   --line-height-tight: 1.25;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.75;
-
-  /* ============================================
-     SHADOW COLORS - Yellow Accents
-     ============================================ */
-  --shadow-yellow: 0 8px 32px rgba(244, 208, 63, 0.3);
-  --shadow-yellow-strong: 0 8px 32px rgba(244, 208, 63, 0.5);
-  --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.6);
-  --shadow-combined: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 40px rgba(244, 208, 63, 0.2);
-
-  /* ============================================
-     BORDER COLORS
-     ============================================ */
-  --border-subtle: rgba(244, 208, 63, 0.1);
-  --border-medium: rgba(244, 208, 63, 0.25);
-  --border-strong: rgba(244, 208, 63, 0.5);
-
-  /* ============================================
-     HOVER STATES
-     ============================================ */
-  --hover-yellow: rgba(244, 208, 63, 0.15);
-  --hover-yellow-strong: rgba(244, 208, 63, 0.3);
-
-  /* ============================================
-     ACTIVE THEME (default: dark)
-     ============================================ */
-  --glass-bg: var(--glass-bg-dark);
-  --glass-overlay: var(--glass-overlay-dark);
-  --glass-highlight: var(--glass-highlight-dark);
-  --glass-text: var(--glass-text-dark);
-  --glass-shadow: var(--glass-shadow-dark);
-  --glass-border: var(--glass-border-dark);
 
   /* ============================================
      Z-INDEX SCALE
@@ -140,34 +176,103 @@
 }
 
 /* ============================================
-   LIGHT MODE OVERRIDE
+   PALETTE THEMES - Apply via data-palette attribute
    ============================================ */
-[data-theme='light'],
-.theme-light {
-  --glass-bg: var(--glass-bg-light);
-  --glass-overlay: var(--glass-overlay-light);
-  --glass-highlight: var(--glass-highlight-light);
-  --glass-text: var(--glass-text-light);
-  --glass-shadow: var(--glass-shadow-light);
-  --glass-border: var(--glass-border-light);
+
+/* Pure Glass Theme */
+[data-palette='pure'] {
+  --glass-bg: var(--palette-pure-bg-dark);
+  --glass-overlay: var(--palette-pure-overlay-dark);
+  --glass-highlight: var(--palette-pure-highlight-dark);
+  --glass-border: var(--palette-pure-border-dark);
+  --glass-text: var(--palette-pure-text-dark);
+}
+
+[data-palette='pure'][data-theme='light'] {
+  --glass-bg: var(--palette-pure-bg-light);
+  --glass-overlay: var(--palette-pure-overlay-light);
+  --glass-highlight: var(--palette-pure-highlight-light);
+  --glass-border: var(--palette-pure-border-light);
+  --glass-text: var(--palette-pure-text-light);
+}
+
+/* Frost Theme */
+[data-palette='frost'] {
+  --glass-bg: var(--palette-frost-bg-dark);
+  --glass-overlay: var(--palette-frost-overlay-dark);
+  --glass-highlight: var(--palette-frost-highlight-dark);
+  --glass-border: var(--palette-frost-border-dark);
+  --glass-text: var(--palette-frost-text-dark);
+}
+
+[data-palette='frost'][data-theme='light'] {
+  --glass-bg: var(--palette-frost-bg-light);
+  --glass-overlay: var(--palette-frost-overlay-light);
+  --glass-highlight: var(--palette-frost-highlight-light);
+  --glass-border: var(--palette-frost-border-light);
+  --glass-text: var(--palette-frost-text-light);
+}
+
+/* Smoke Theme */
+[data-palette='smoke'] {
+  --glass-bg: var(--palette-smoke-bg-dark);
+  --glass-overlay: var(--palette-smoke-overlay-dark);
+  --glass-highlight: var(--palette-smoke-highlight-dark);
+  --glass-border: var(--palette-smoke-border-dark);
+  --glass-text: var(--palette-smoke-text-dark);
+}
+
+[data-palette='smoke'][data-theme='light'] {
+  --glass-bg: var(--palette-smoke-bg-light);
+  --glass-overlay: var(--palette-smoke-overlay-light);
+  --glass-highlight: var(--palette-smoke-highlight-light);
+  --glass-border: var(--palette-smoke-border-light);
+  --glass-text: var(--palette-smoke-text-light);
+}
+
+/* Accent (Yellow) Theme */
+[data-palette='accent'] {
+  --glass-bg: var(--palette-accent-bg-dark);
+  --glass-overlay: var(--palette-accent-overlay-dark);
+  --glass-highlight: var(--palette-accent-highlight-dark);
+  --glass-border: var(--palette-accent-border-dark);
+  --glass-text: var(--palette-accent-text-dark);
+}
+
+[data-palette='accent'][data-theme='light'] {
+  --glass-bg: var(--palette-accent-bg-light);
+  --glass-overlay: var(--palette-accent-overlay-light);
+  --glass-highlight: var(--palette-accent-highlight-light);
+  --glass-border: var(--palette-accent-border-light);
+  --glass-text: var(--palette-accent-text-light);
+}
+
+/* ============================================
+   LIGHT/DARK MODE (when no palette specified)
+   ============================================ */
+[data-theme='light']:not([data-palette]) {
+  --glass-bg: var(--palette-pure-bg-light);
+  --glass-overlay: var(--palette-pure-overlay-light);
+  --glass-highlight: var(--palette-pure-highlight-light);
+  --glass-border: var(--palette-pure-border-light);
+  --glass-text: var(--palette-pure-text-light);
 }
 
 /* ============================================
    AUTO THEME SWITCHING
    ============================================ */
 @media (prefers-color-scheme: light) {
-  :root:not([data-theme]) {
-    --glass-bg: var(--glass-bg-light);
-    --glass-overlay: var(--glass-overlay-light);
-    --glass-highlight: var(--glass-highlight-light);
-    --glass-text: var(--glass-text-light);
-    --glass-shadow: var(--glass-shadow-light);
-    --glass-border: var(--glass-border-light);
+  :root:not([data-theme]):not([data-palette]) {
+    --glass-bg: var(--palette-pure-bg-light);
+    --glass-overlay: var(--palette-pure-overlay-light);
+    --glass-highlight: var(--palette-pure-highlight-light);
+    --glass-border: var(--palette-pure-border-light);
+    --glass-text: var(--palette-pure-text-light);
   }
 }
 
 /* ============================================
-   ACCESSIBILITY - REDUCED TRANSPARENCY
+   ACCESSIBILITY
    ============================================ */
 @media (prefers-reduced-transparency: reduce) {
   :root {
@@ -177,9 +282,6 @@
   }
 }
 
-/* ============================================
-   ACCESSIBILITY - REDUCED MOTION
-   ============================================ */
 @media (prefers-reduced-motion: reduce) {
   :root {
     --glass-transition: none;
