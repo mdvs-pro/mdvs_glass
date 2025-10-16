@@ -1,4 +1,4 @@
-/* SVG Filters for Liquid Glass Effects */
+/* SVG Filters for TRUE Liquid Glass Effect (macOS Tahoe Style) */
 
 export default function GlassFilters() {
   return (
@@ -7,119 +7,164 @@ export default function GlassFilters() {
       aria-hidden="true"
     >
       <defs>
-        {/* Main Glass Distortion Filter */}
-        <filter id="glass-distortion" x="-50%" y="-50%" width="200%" height="200%">
-          <feTurbulence
-            type="turbulence"
-            baseFrequency="0.008"
-            numOctaves="2"
-            result="noise"
-            seed="2"
-          />
-          <feDisplacementMap
-            in="SourceGraphic"
-            in2="noise"
-            scale="77"
-            xChannelSelector="R"
-            yChannelSelector="G"
-          />
-        </filter>
-
-        {/* Subtle Glass Distortion - for smaller elements */}
-        <filter id="glass-distortion-subtle" x="-50%" y="-50%" width="200%" height="200%">
-          <feTurbulence
-            type="turbulence"
-            baseFrequency="0.005"
-            numOctaves="2"
-            result="noise"
-            seed="1"
-          />
-          <feDisplacementMap
-            in="SourceGraphic"
-            in2="noise"
-            scale="50"
-            xChannelSelector="R"
-            yChannelSelector="G"
-          />
-        </filter>
-
-        {/* Strong Glass Distortion - for dramatic effects */}
-        <filter id="glass-distortion-strong" x="-50%" y="-50%" width="200%" height="200%">
-          <feTurbulence
-            type="turbulence"
-            baseFrequency="0.01"
-            numOctaves="3"
-            result="noise"
-            seed="3"
-          />
-          <feDisplacementMap
-            in="SourceGraphic"
-            in2="noise"
-            scale="100"
-            xChannelSelector="R"
-            yChannelSelector="G"
-          />
-        </filter>
-
-        {/* Yellow Tint Filter - for branded accents */}
-        <filter id="glass-yellow-tint">
-          <feColorMatrix
-            type="matrix"
-            values="
-              1.2 0   0   0  0
-              0.9 1   0   0  0
-              0   0   0.8 0  0
-              0   0   0   1  0"
-          />
-        </filter>
-
-        {/* Glow Filter - Yellow */}
-        <filter id="glass-glow-yellow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="8" result="coloredBlur" />
-          <feFlood floodColor="#f4d03f" floodOpacity="0.5" />
-          <feComposite in2="coloredBlur" operator="in" />
-          <feMerge>
-            <feMergeNode />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-
-        {/* Glow Filter - White (for light accents) */}
-        <filter id="glass-glow-white" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="6" result="coloredBlur" />
-          <feFlood floodColor="#ffffff" floodOpacity="0.3" />
-          <feComposite in2="coloredBlur" operator="in" />
-          <feMerge>
-            <feMergeNode />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-
-        {/* Frosted Glass Effect */}
-        <filter id="glass-frosted">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
-          <feComponentTransfer>
-            <feFuncA type="discrete" tableValues="1 1" />
-          </feComponentTransfer>
-        </filter>
-
-        {/* Shimmer Effect - for animated elements */}
-        <filter id="glass-shimmer">
+        {/* TRUE LIQUID GLASS DISTORTION - Advanced */}
+        <filter
+          id="glass-distortion"
+          x="0%"
+          y="0%"
+          width="100%"
+          height="100%"
+          filterUnits="objectBoundingBox"
+        >
+          {/* Create fractal noise for organic liquid effect */}
           <feTurbulence
             type="fractalNoise"
-            baseFrequency="0.01"
+            baseFrequency="0.01 0.01"
             numOctaves="1"
-            result="noise"
             seed="5"
+            result="turbulence"
+          />
+
+          {/* Map the turbulence to create liquid-like distortion */}
+          <feComponentTransfer in="turbulence" result="mapped">
+            <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+            <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+            <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+          </feComponentTransfer>
+
+          {/* Soften the map for smoother distortion */}
+          <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+
+          {/* Add specular lighting for glass shine */}
+          <feSpecularLighting
+            in="softMap"
+            surfaceScale="5"
+            specularConstant="1"
+            specularExponent="100"
+            lighting-color="white"
+            result="specLight"
           >
-            <animate
-              attributeName="baseFrequency"
-              values="0.01;0.03;0.01"
-              dur="8s"
-              repeatCount="indefinite"
-            />
-          </feTurbulence>
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="30" />
+            <fePointLight x="-200" y="-200" z="300" />
+          </feSpecularLighting>
+
+          {/* Combine the lighting with the map */}
+          <feComposite
+            in="specLight"
+            operator="arithmetic"
+            k1="0"
+            k2="1"
+            k3="1"
+            k4="0"
+            result="litImage"
+          />
+
+          {/* Apply displacement for liquid distortion */}
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="softMap"
+            scale="150"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
+        </filter>
+
+        {/* Variant filters with different seeds */}
+        <filter
+          id="glass-distortion-seed14"
+          x="0%"
+          y="0%"
+          width="100%"
+          height="100%"
+          filterUnits="objectBoundingBox"
+        >
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.01 0.01"
+            numOctaves="1"
+            seed="14"
+            result="turbulence"
+          />
+          <feComponentTransfer in="turbulence" result="mapped">
+            <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+            <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+            <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+          </feComponentTransfer>
+          <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+          <feSpecularLighting
+            in="softMap"
+            surfaceScale="5"
+            specularConstant="1"
+            specularExponent="100"
+            lighting-color="white"
+            result="specLight"
+          >
+            <fePointLight x="-200" y="-200" z="300" />
+          </feSpecularLighting>
+          <feComposite
+            in="specLight"
+            operator="arithmetic"
+            k1="0"
+            k2="1"
+            k3="1"
+            k4="0"
+            result="litImage"
+          />
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="softMap"
+            scale="150"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
+        </filter>
+
+        <filter
+          id="glass-distortion-seed17"
+          x="0%"
+          y="0%"
+          width="100%"
+          height="100%"
+          filterUnits="objectBoundingBox"
+        >
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.01 0.01"
+            numOctaves="1"
+            seed="17"
+            result="turbulence"
+          />
+          <feComponentTransfer in="turbulence" result="mapped">
+            <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+            <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+            <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+          </feComponentTransfer>
+          <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+          <feSpecularLighting
+            in="softMap"
+            surfaceScale="5"
+            specularConstant="1"
+            specularExponent="100"
+            lighting-color="white"
+            result="specLight"
+          >
+            <fePointLight x="-200" y="-200" z="300" />
+          </feSpecularLighting>
+          <feComposite
+            in="specLight"
+            operator="arithmetic"
+            k1="0"
+            k2="1"
+            k3="1"
+            k4="0"
+            result="litImage"
+          />
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="softMap"
+            scale="150"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
         </filter>
       </defs>
     </svg>

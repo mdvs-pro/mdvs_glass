@@ -30,11 +30,27 @@ body {
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
   line-height: var(--line-height-normal);
-  color: var(--brand-white);
-  background: linear-gradient(135deg, var(--brand-black) 0%, var(--brand-gray) 100%);
-  background-attachment: fixed;
+  color: white;
+
+  /* Animated floral background pattern */
+  background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/beautiful-orange-and-pastel-flowers-seamless-pattern-julien.jpg');
+  background-position: center center;
+  background-size: 500px;
+  background-repeat: repeat;
+
   min-height: 100vh;
   overflow-x: hidden;
+
+  animation: moveBackground 60s linear infinite;
+}
+
+@keyframes moveBackground {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 0% -500%;
+  }
 }
 
 /* ============================================
