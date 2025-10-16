@@ -1,0 +1,189 @@
+/* MDVS Agency - Liquid Glass Design System Variables */
+
+:root {
+  /* ============================================
+     BRAND COLORS - MDVS Agency
+     ============================================ */
+  --brand-yellow: #f4d03f;
+  --brand-yellow-light: #f9e79f;
+  --brand-yellow-dark: #d4a017;
+  --brand-white: #ffffff;
+  --brand-black: #1a1a1a;
+  --brand-gray: #2c2c2c;
+
+  /* ============================================
+     LIGHT MODE - Yellow Glass Theme
+     ============================================ */
+  --glass-bg-light: rgba(244, 208, 63, 0.15);
+  --glass-overlay-light: rgba(244, 208, 63, 0.25);
+  --glass-highlight-light: rgba(249, 231, 159, 0.8);
+  --glass-text-light: #1a1a1a;
+  --glass-shadow-light: 0 8px 32px rgba(244, 208, 63, 0.3);
+  --glass-border-light: rgba(244, 208, 63, 0.4);
+
+  /* ============================================
+     DARK MODE - Inverted Yellow Glass Theme
+     ============================================ */
+  --glass-bg-dark: rgba(26, 26, 26, 0.35);
+  --glass-overlay-dark: rgba(26, 26, 26, 0.45);
+  --glass-highlight-dark: rgba(244, 208, 63, 0.25);
+  --glass-text-dark: #f4d03f;
+  --glass-shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.6);
+  --glass-border-dark: rgba(244, 208, 63, 0.2);
+
+  /* ============================================
+     GLASS EFFECTS
+     ============================================ */
+  --glass-blur: 8px;
+  --glass-blur-light: 4px;
+  --glass-blur-strong: 12px;
+  --glass-blur-extra-strong: 16px;
+  --glass-distortion-scale: 77;
+
+  /* ============================================
+     BORDER RADIUS
+     ============================================ */
+  --glass-border-radius: 24px;
+  --glass-border-radius-medium: 16px;
+  --glass-border-radius-small: 12px;
+  --glass-border-radius-tiny: 8px;
+
+  /* ============================================
+     TRANSITIONS & ANIMATIONS
+     ============================================ */
+  --glass-transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --glass-transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --glass-transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ============================================
+     SPACING
+     ============================================ */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+  --font-family-base:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-family-mono:
+    'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+  --font-size-5xl: 3rem; /* 48px */
+  --font-size-6xl: 3.75rem; /* 60px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ============================================
+     SHADOW COLORS - Yellow Accents
+     ============================================ */
+  --shadow-yellow: 0 8px 32px rgba(244, 208, 63, 0.3);
+  --shadow-yellow-strong: 0 8px 32px rgba(244, 208, 63, 0.5);
+  --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.6);
+  --shadow-combined: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 40px rgba(244, 208, 63, 0.2);
+
+  /* ============================================
+     BORDER COLORS
+     ============================================ */
+  --border-subtle: rgba(244, 208, 63, 0.1);
+  --border-medium: rgba(244, 208, 63, 0.25);
+  --border-strong: rgba(244, 208, 63, 0.5);
+
+  /* ============================================
+     HOVER STATES
+     ============================================ */
+  --hover-yellow: rgba(244, 208, 63, 0.15);
+  --hover-yellow-strong: rgba(244, 208, 63, 0.3);
+
+  /* ============================================
+     ACTIVE THEME (default: dark)
+     ============================================ */
+  --glass-bg: var(--glass-bg-dark);
+  --glass-overlay: var(--glass-overlay-dark);
+  --glass-highlight: var(--glass-highlight-dark);
+  --glass-text: var(--glass-text-dark);
+  --glass-shadow: var(--glass-shadow-dark);
+  --glass-border: var(--glass-border-dark);
+
+  /* ============================================
+     Z-INDEX SCALE
+     ============================================ */
+  --z-index-base: 1;
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+}
+
+/* ============================================
+   LIGHT MODE OVERRIDE
+   ============================================ */
+[data-theme='light'],
+.theme-light {
+  --glass-bg: var(--glass-bg-light);
+  --glass-overlay: var(--glass-overlay-light);
+  --glass-highlight: var(--glass-highlight-light);
+  --glass-text: var(--glass-text-light);
+  --glass-shadow: var(--glass-shadow-light);
+  --glass-border: var(--glass-border-light);
+}
+
+/* ============================================
+   AUTO THEME SWITCHING
+   ============================================ */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --glass-bg: var(--glass-bg-light);
+    --glass-overlay: var(--glass-overlay-light);
+    --glass-highlight: var(--glass-highlight-light);
+    --glass-text: var(--glass-text-light);
+    --glass-shadow: var(--glass-shadow-light);
+    --glass-border: var(--glass-border-light);
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY - REDUCED TRANSPARENCY
+   ============================================ */
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --glass-bg: rgba(26, 26, 26, 0.95);
+    --glass-overlay: rgba(26, 26, 26, 0.95);
+    --glass-blur: 2px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY - REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --glass-transition: none;
+    --glass-transition-fast: none;
+    --glass-transition-slow: none;
+  }
+}

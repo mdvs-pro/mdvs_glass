@@ -1,0 +1,434 @@
+/* ============================================
+   LIQUID GLASS ANIMATIONS
+   ============================================ */
+
+/* ============================================
+   FLOATING & DISTORTION ANIMATIONS
+   ============================================ */
+
+/* Floating distortion - for background gradients */
+@keyframes floatDistort {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.animate-float-distort {
+  animation: floatDistort 10s infinite ease-in-out;
+}
+
+/* Rotating glow - for cards */
+@keyframes rotateGlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate-glow {
+  animation: rotateGlow 15s linear infinite;
+}
+
+/* ============================================
+   FADE & SLIDE ANIMATIONS
+   ============================================ */
+
+/* Fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Fade in up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Fade in down */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.6s ease-out;
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out;
+}
+
+/* ============================================
+   SCALE ANIMATIONS
+   ============================================ */
+
+/* Scale in */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out;
+}
+
+/* Pulse */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ============================================
+   GLOW ANIMATIONS
+   ============================================ */
+
+/* Pulse glow - Yellow */
+@keyframes pulseYellow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(244, 208, 63, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(244, 208, 63, 0.6);
+  }
+}
+
+.animate-pulse-yellow {
+  animation: pulseYellow 2s ease-in-out infinite;
+}
+
+/* Pulse glow - Subtle */
+@keyframes pulseGlowSubtle {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(244, 208, 63, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(244, 208, 63, 0.4);
+  }
+}
+
+.animate-pulse-glow-subtle {
+  animation: pulseGlowSubtle 3s ease-in-out infinite;
+}
+
+/* ============================================
+   GRADIENT ANIMATIONS
+   ============================================ */
+
+/* Gradient shift */
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  background-size: 1000px 100%;
+  animation: shimmer 3s infinite;
+}
+
+/* ============================================
+   SPIN & ROTATE ANIMATIONS
+   ============================================ */
+
+/* Spin */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
+}
+
+/* ============================================
+   BOUNCE ANIMATIONS
+   ============================================ */
+
+/* Bounce */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s ease-in-out infinite;
+}
+
+/* Bounce subtle */
+@keyframes bounceSubtle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce-subtle {
+  animation: bounceSubtle 2s ease-in-out infinite;
+}
+
+/* ============================================
+   GLASS-SPECIFIC ANIMATIONS
+   ============================================ */
+
+/* Glass reveal - from blur to clear */
+@keyframes glassReveal {
+  from {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    opacity: 0;
+  }
+  to {
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    opacity: 1;
+  }
+}
+
+.animate-glass-reveal {
+  animation: glassReveal 0.8s ease-out;
+}
+
+/* Glass shimmer - for premium elements */
+@keyframes glassShimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.glass-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(244, 208, 63, 0.3) 50%, transparent 100%);
+  background-size: 1000px 100%;
+  animation: glassShimmer 3s infinite;
+  pointer-events: none;
+}
+
+/* ============================================
+   NUMBER COUNTER ANIMATION
+   ============================================ */
+
+/* Counter up - for metrics */
+@keyframes counterUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-counter-up {
+  animation: counterUp 0.6s ease-out;
+}
+
+/* ============================================
+   STAGGER DELAYS (for sequential animations)
+   ============================================ */
+
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+.animate-delay-400 {
+  animation-delay: 0.4s;
+}
+.animate-delay-500 {
+  animation-delay: 0.5s;
+}
+.animate-delay-700 {
+  animation-delay: 0.7s;
+}
+.animate-delay-1000 {
+  animation-delay: 1s;
+}
+
+/* ============================================
+   HOVER ANIMATIONS
+   ============================================ */
+
+/* Lift on hover */
+.hover-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-combined);
+}
+
+/* Glow on hover */
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 40px rgba(244, 208, 63, 0.4);
+}
+
+/* Scale on hover */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   ACCESSIBILITY - REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-float-distort,
+  .animate-rotate-glow,
+  .animate-gradient-shift,
+  .animate-shimmer,
+  .animate-pulse,
+  .animate-bounce,
+  .animate-spin {
+    animation: none !important;
+  }
+}
