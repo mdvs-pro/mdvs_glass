@@ -16,7 +16,10 @@ export default function HomePage() {
               Elite software development and IT solutions with 11 years of proven expertise
             </p>
             <div className={styles.heroActions}>
-              <LiquidGlassButton href="/contact">
+              <LiquidGlassButton
+                href="/contact"
+                backgroundImage="/images/button-backgrounds/2148862133.jpg"
+              >
                 <span style={{ fontSize: '1.1rem', fontWeight: 500 }}>Start Your Project</span>
               </LiquidGlassButton>
             </div>
@@ -82,7 +85,10 @@ export default function HomePage() {
             <p className={styles.ctaDescription}>
               Let's discuss how we can help bring your vision to life
             </p>
-            <LiquidGlassButton href="/contact">
+            <LiquidGlassButton
+              href="/contact"
+              backgroundImage="/images/button-backgrounds/2148862133.jpg"
+            >
               <span style={{ fontSize: '1.1rem', fontWeight: 500 }}>Get In Touch</span>
             </LiquidGlassButton>
           </div>

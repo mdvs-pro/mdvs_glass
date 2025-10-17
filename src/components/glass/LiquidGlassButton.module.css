@@ -5,12 +5,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
 
-  padding: 1.5rem 2.5rem;
-  border-radius: 3rem;
+  padding: 1rem 2rem;
+  margin: 0.5rem;
+  border-radius: 2.5rem;
 
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: black;
   text-decoration: none;
 
@@ -25,9 +27,34 @@
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
 }
 
+/* Hover Effect - Lift */
 .liquidGlassWrapper:hover {
-  padding: 1.8rem 2.8rem;
-  transform: scale(1.02);
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(244, 208, 63, 0.4);
+}
+
+/* ============================================
+   SIZE VARIANTS
+   ============================================ */
+
+.sizeSmall {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  border-radius: 2rem;
+}
+
+.sizeMedium {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 2.5rem;
+}
+
+.sizeLarge {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.125rem;
+  border-radius: 3rem;
 }
 
 /* Layer 0: Animated Background (behind all glass layers) */
@@ -36,17 +63,20 @@
   z-index: 1;
   inset: 0;
 
-  /* Animated floral background */
-  background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/beautiful-orange-and-pastel-flowers-seamless-pattern-julien.jpg');
+  border-radius: inherit;
+  overflow: hidden;
+
+  /* Default fallback gradient if no image provided */
+  background: linear-gradient(135deg, #f4d03f 0%, #d4a017 50%, #f9e79f 100%);
+
+  /* Image settings - will be overridden by inline style */
   background-position: 0% 0%;
   background-size: 500px 500px;
   background-repeat: repeat;
   animation: liquidBackgroundMove 60s linear infinite;
-
-  border-radius: inherit;
-  overflow: hidden;
 }
 
+/* Animation for background images */
 @keyframes liquidBackgroundMove {
   0% {
     background-position: 0% 0%;
@@ -99,15 +129,10 @@
   position: relative;
   z-index: 5;
 
-  color: rgba(0, 0, 0, 0.8);
-  font-weight: 600;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+  color: #000000;
+  font-weight: 700;
 
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
-}
-
-.liquidGlassWrapper:hover .liquidGlassText {
-  transform: scale(0.95);
 }
 
 /* Dark mode adjustments */
@@ -115,25 +140,161 @@
   .liquidGlassTint {
     background: rgba(255, 255, 255, 0.15);
   }
+}
 
-  .liquidGlassText {
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+/* ============================================
+   VARIANT STYLES
+   Variants work via TINT overlay, not background replacement
+   This allows backgroundImage prop to work for all variants
+   ============================================ */
+
+/* Primary: Yellow tint (default) */
+.variantPrimary .liquidGlassText {
+  color: #000000;
+}
+
+/* Secondary: Darker tint with yellow text */
+.variantSecondary .liquidGlassTint {
+  background: rgba(0, 0, 0, 0.5); /* Darker overlay */
+}
+
+.variantSecondary .liquidGlassText {
+  color: #f4d03f;
+}
+
+.variantSecondary {
+  border: 1px solid rgba(244, 208, 63, 0.4);
+}
+
+.variantSecondary:hover {
+  border-color: rgba(244, 208, 63, 0.7);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(244, 208, 63, 0.3);
+}
+
+/* Outline: Light tint with white text */
+.variantOutline .liquidGlassTint {
+  background: rgba(255, 255, 255, 0.08); /* Very light overlay */
+}
+
+.variantOutline .liquidGlassText {
+  color: #ffffff;
+}
+
+.variantOutline {
+  border: 2px solid rgba(244, 208, 63, 0.5);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.variantOutline:hover {
+  border-color: rgba(244, 208, 63, 0.9);
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(244, 208, 63, 0.2);
+}
+
+/* ============================================
+   STATE STYLES
+   ============================================ */
+
+/* Full Width */
+.fullWidth {
+  width: 100%;
+  display: flex;
+}
+
+/* Disabled State */
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.disabled:hover {
+  transform: none;
+  box-shadow:
+    0 6px 6px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.disabled .liquidGlassBackground {
+  animation: none !important;
+  filter: grayscale(0.5);
+}
+
+/* Loading State */
+.loading {
+  cursor: wait;
+  pointer-events: none;
+}
+
+/* ============================================
+   ICON & SPINNER
+   ============================================ */
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.liquidGlassText {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Spinner Animation */
+.spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
-/* Accessibility */
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
 @media (prefers-reduced-motion: reduce) {
   .liquidGlassWrapper {
     transition: none;
   }
 
   .liquidGlassWrapper:hover {
-    padding: 1.5rem 2.5rem;
     transform: none;
   }
 
-  .liquidGlassWrapper:hover .liquidGlassText {
-    transform: none;
+  .liquidGlassBackground {
+    animation: none !important;
+  }
+
+  .spinner {
+    animation: none !important;
+    border-right-color: currentColor;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .liquidGlassWrapper {
+    border: 2px solid currentColor;
+  }
+
+  .variantSecondary,
+  .variantOutline {
+    border-width: 2px;
   }
 }

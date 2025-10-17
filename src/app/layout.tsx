@@ -3,7 +3,6 @@ import '@/styles/globals.css'
 import GlassFilters from '@/components/glass/GlassFilters'
 import Header from '@/components/navigation/Header'
 import Footer from '@/components/navigation/Footer'
-import BackgroundSwitcher from '@/components/glass/BackgroundSwitcher'
 
 export const metadata: Metadata = {
   title: 'MDVS Agency - Elite Software Development & IT Outstaffing',
@@ -27,7 +26,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main>{children}</main>
         <Footer />
-        <BackgroundSwitcher />
       </body>
     </html>
   )
