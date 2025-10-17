@@ -29,21 +29,25 @@ html {
 body {
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
-  line-height: var(--line-height-normal);
-  color: white;
+  line-height: var(--line-height-relaxed);
+  color: rgba(255, 255, 255, 0.95);
 
-  /* Animated floral background pattern */
-  background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/beautiful-orange-and-pastel-flowers-seamless-pattern-julien.jpg');
-  background-position: center center;
-  background-size: 500px;
-  background-repeat: repeat;
+  /* Dark background for optimal reading and contrast */
+  background: #0f0f0f;
+  background-image:
+    radial-gradient(at 20% 30%, rgba(244, 208, 63, 0.03) 0px, transparent 50%),
+    radial-gradient(at 80% 70%, rgba(244, 208, 63, 0.02) 0px, transparent 50%);
 
   min-height: 100vh;
   overflow-x: hidden;
 
-  animation: moveBackground 60s linear infinite;
+  /* Better text rendering for readability */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Animated background - now only for glass elements */
 @keyframes moveBackground {
   from {
     background-position: 0% 0%;

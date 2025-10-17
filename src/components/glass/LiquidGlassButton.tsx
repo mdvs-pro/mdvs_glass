@@ -17,6 +17,7 @@ export default function LiquidGlassButton({ children, href, onClick }: LiquidGla
       onClick={onClick}
       {...(href ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
     >
+      <div className={styles.liquidGlassBackground}></div>
       <div className={styles.liquidGlassEffect}></div>
       <div className={styles.liquidGlassTint}></div>
       <div className={styles.liquidGlassShine}></div>

@@ -49,6 +49,7 @@ export default function GlassCard({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
+      <div className="glass-background"></div>
       <div className="glass-filter"></div>
       <div className="glass-overlay"></div>
       <div

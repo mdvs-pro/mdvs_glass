@@ -71,6 +71,15 @@
   --glass-text: var(--palette-pure-text-dark);
 
   /* ============================================
+     MDVS BRAND COLORS (from logo)
+     ============================================ */
+  --brand-yellow: #F4D03F;
+  --brand-yellow-light: #F9E79F;
+  --brand-yellow-dark: #D4A017;
+  --brand-black: #1a1a1a;
+  --brand-white: #ffffff;
+
+  /* ============================================
      BASE COLORS
      ============================================ */
   --color-white: #ffffff;
@@ -104,6 +113,19 @@
   --glass-shadow-md: 0 6px 24px rgba(0, 0, 0, 0.16);
   --glass-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
   --glass-shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.24);
+
+  /* Yellow accent shadows for buttons and highlights */
+  --shadow-yellow: 0 8px 24px rgba(244, 208, 63, 0.25);
+  --shadow-yellow-strong: 0 12px 32px rgba(244, 208, 63, 0.35);
+  --shadow-combined: 0 4px 16px rgba(0, 0, 0, 0.12), 0 0 24px rgba(244, 208, 63, 0.15);
+
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-medium: rgba(244, 208, 63, 0.3);
+  --border-strong: rgba(244, 208, 63, 0.6);
+
+  /* Hover states */
+  --hover-yellow: rgba(244, 208, 63, 0.15);
 
   /* ============================================
      BORDER RADIUS
