@@ -1,0 +1,365 @@
+/* ============================================
+   LIQUID GLASS DECORATIVE ELEMENTS
+   Animated orbs, circles, and shapes
+   Based on liquidglass-kit.dev
+   ============================================ */
+
+/* ============================================
+   GLASS ORBS - Large floating gradient orbs
+   ============================================ */
+.glass-orb {
+  position: absolute;
+  border-radius: 9999px;
+  opacity: 0.2;
+  filter: blur(64px);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  pointer-events: none;
+}
+
+.glass-orb-1 {
+  top: 5rem;
+  left: -5rem;
+  width: 24rem;
+  height: 24rem;
+  background: linear-gradient(to bottom right, #60a5fa, #67e8f9);
+  animation: float 20s ease-in-out infinite;
+}
+
+.glass-orb-2 {
+  top: 10rem;
+  right: 2.5rem;
+  width: 20rem;
+  height: 20rem;
+  background: linear-gradient(to bottom right, #c084fc, #f9a8d4);
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+.glass-orb-3 {
+  bottom: 5rem;
+  left: 33.333333%;
+  width: 16rem;
+  height: 16rem;
+  background: linear-gradient(to bottom right, #f472b6, #fdba74);
+  animation: float 15s ease-in-out infinite;
+}
+
+/* ============================================
+   LIQUID ELEMENTS - Flowing morphing shapes
+   ============================================ */
+.liquid-element {
+  position: absolute;
+  border-radius: 9999px;
+  opacity: 0.3;
+  filter: blur(24px);
+  animation: liquidFlow 30s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.liquid-element-1 {
+  top: 25%;
+  right: 25%;
+  width: 8rem;
+  height: 8rem;
+  background: linear-gradient(to bottom right, rgba(96, 165, 250, 0.2), rgba(103, 232, 249, 0.2));
+  animation-delay: -5s;
+}
+
+.liquid-element-2 {
+  top: 50%;
+  left: 20%;
+  width: 6rem;
+  height: 6rem;
+  background: linear-gradient(to bottom right, rgba(192, 132, 252, 0.2), rgba(249, 168, 212, 0.2));
+  animation-delay: -15s;
+}
+
+.liquid-element-3 {
+  bottom: 33.333333%;
+  right: 16.666667%;
+  width: 10rem;
+  height: 10rem;
+  background: linear-gradient(to bottom right, rgba(74, 222, 128, 0.2), rgba(110, 231, 183, 0.2));
+  animation-delay: -25s;
+}
+
+/* ============================================
+   GLASS SHAPES - Geometric rotating shapes
+   ============================================ */
+.glass-shape {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  pointer-events: none;
+}
+
+.glass-shape-1 {
+  top: 4rem;
+  left: 8.333333%;
+  width: 5rem;
+  height: 5rem;
+  animation: glassRotate 40s linear infinite;
+}
+
+.glass-shape-2 {
+  top: 66.666667%;
+  right: 12.5%;
+  width: 4rem;
+  height: 4rem;
+  animation: glassRotate 35s linear infinite reverse;
+}
+
+/* ============================================
+   LIQUID CIRCLES - Radial gradient circles
+   ============================================ */
+.liquid-circle {
+  position: absolute;
+  border-radius: 9999px;
+  opacity: 0.2;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.1),
+    transparent 70%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.liquid-circle-1 {
+  width: 24rem;
+  height: 24rem;
+  top: 10%;
+  left: -10%;
+  animation: liquidCircleFloat1 25s ease-in-out infinite;
+}
+
+.liquid-circle-2 {
+  width: 20rem;
+  height: 20rem;
+  top: 60%;
+  right: -5%;
+  animation: liquidCircleFloat2 30s ease-in-out infinite;
+}
+
+.liquid-circle-3 {
+  width: 16rem;
+  height: 16rem;
+  top: 40%;
+  left: 60%;
+  animation: liquidCircleFloat3 20s ease-in-out infinite;
+}
+
+.liquid-circle-4 {
+  width: 13rem;
+  height: 13rem;
+  bottom: 10%;
+  left: 10%;
+  animation: liquidCircleFloat4 35s ease-in-out infinite;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+/* Float Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translate(0) scale(1);
+  }
+  25% {
+    transform: translateY(-20px) translate(10px) scale(1.05);
+  }
+  50% {
+    transform: translateY(0) translate(20px) scale(1);
+  }
+  75% {
+    transform: translateY(20px) translate(10px) scale(0.95);
+  }
+}
+
+/* Liquid Flow - Morphing and moving */
+@keyframes liquidFlow {
+  0%, 100% {
+    transform: translateY(0) translate(0) scale(1) rotate(0deg);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    transform: translateY(-30px) translate(20px) scale(1.1) rotate(90deg);
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 70%;
+  }
+  50% {
+    transform: translateY(0) translate(40px) scale(0.9) rotate(180deg);
+    border-radius: 70% 30% 40% 60% / 40% 50% 60% 30%;
+  }
+  75% {
+    transform: translateY(30px) translate(20px) scale(1.05) rotate(270deg);
+    border-radius: 40% 70% 60% 30% / 70% 40% 50% 60%;
+  }
+}
+
+/* Glass Rotate */
+@keyframes glassRotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+    opacity: 0.1;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.3;
+  }
+}
+
+/* Liquid Circle Float Variants */
+@keyframes liquidCircleFloat1 {
+  0%, 100% {
+    transform: translateY(0) translate(0) scale(1);
+    opacity: 0.15;
+  }
+  25% {
+    transform: translateY(-40px) translate(30px) scale(1.1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translateY(-20px) translate(60px) scale(0.9);
+    opacity: 0.2;
+  }
+  75% {
+    transform: translateY(20px) translate(30px) scale(1.05);
+    opacity: 0.18;
+  }
+}
+
+@keyframes liquidCircleFloat2 {
+  0%, 100% {
+    transform: translateY(0) translate(0) scale(1) rotate(0deg);
+    opacity: 0.2;
+  }
+  33% {
+    transform: translateY(30px) translate(-20px) scale(1.15) rotate(120deg);
+    opacity: 0.12;
+  }
+  66% {
+    transform: translateY(-15px) translate(-40px) scale(0.85) rotate(240deg);
+    opacity: 0.25;
+  }
+}
+
+@keyframes liquidCircleFloat3 {
+  0%, 100% {
+    transform: translateY(0) translate(0) scale(1);
+    opacity: 0.18;
+  }
+  40% {
+    transform: translateY(-25px) translate(-30px) scale(1.2);
+    opacity: 0.1;
+  }
+  80% {
+    transform: translateY(35px) translate(-15px) scale(0.8);
+    opacity: 0.22;
+  }
+}
+
+@keyframes liquidCircleFloat4 {
+  0%, 100% {
+    transform: translateY(0) translate(0) scale(1) rotate(0deg);
+    opacity: 0.16;
+  }
+  20% {
+    transform: translateY(-20px) translate(25px) scale(1.1) rotate(72deg);
+    opacity: 0.22;
+  }
+  40% {
+    transform: translateY(-35px) translate(50px) scale(0.9) rotate(144deg);
+    opacity: 0.12;
+  }
+  60% {
+    transform: translateY(-15px) translate(35px) scale(1.05) rotate(216deg);
+    opacity: 0.2;
+  }
+  80% {
+    transform: translateY(15px) translate(15px) scale(0.95) rotate(288deg);
+    opacity: 0.18;
+  }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ============================================
+   DYNAMIC BACKGROUND
+   ============================================ */
+.dynamic-background {
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: backgroundFloat 80s ease-in-out infinite;
+  position: relative;
+}
+
+.dynamic-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 0;
+}
+
+.dynamic-background > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes backgroundFloat {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 768px) {
+  .glass-orb {
+    width: 12rem !important;
+    height: 12rem !important;
+  }
+
+  .liquid-circle {
+    width: 12rem !important;
+    height: 12rem !important;
+  }
+
+  .liquid-element {
+    width: 4rem !important;
+    height: 4rem !important;
+  }
+}

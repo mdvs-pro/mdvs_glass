@@ -1,0 +1,64 @@
+/* ============================================
+   DYNAMIC BACKGROUND
+   Background with animated image and decorations
+   ============================================ */
+
+.dynamicBackground {
+  position: relative;
+  min-height: 100vh;
+
+  /* Background settings */
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* Animated background position */
+  animation: backgroundFloat 80s ease-in-out infinite;
+}
+
+/* Dark overlay for better content visibility */
+.dynamicBackground::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 0;
+}
+
+/* Content layer */
+.content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+/* Background float animation */
+@keyframes backgroundFloat {
+  0%,
+  100% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .dynamicBackground {
+    background-attachment: scroll;
+    animation: none;
+  }
+}

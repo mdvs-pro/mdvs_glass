@@ -1,0 +1,124 @@
+.processStep {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-lg);
+  flex: 1;
+}
+
+/* Connector Line - Horizontal */
+.connector {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--brand-yellow) 0%,
+    rgba(244, 208, 63, 0.3) 50%,
+    rgba(244, 208, 63, 0.1) 100%
+  );
+  z-index: 0;
+}
+
+/* Number Badge */
+.numberBadge {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand-yellow), var(--brand-yellow-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+  box-shadow: 0 4px 12px rgba(244, 208, 63, 0.4);
+  z-index: 2;
+}
+
+.number {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: #000000;
+}
+
+/* Icon */
+.iconWrapper {
+  position: relative;
+  margin-bottom: var(--spacing-lg);
+  z-index: 1;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  background: linear-gradient(135deg, var(--brand-yellow), var(--brand-yellow-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Mobile - Vertical Layout */
+@media (max-width: 768px) {
+  .processStep {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: var(--spacing-xl) 0;
+    padding-left: var(--spacing-2xl);
+  }
+
+  /* Connector Line - Vertical for mobile */
+  .connector {
+    top: 90px;
+    left: 19px;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      var(--brand-yellow) 0%,
+      rgba(244, 208, 63, 0.3) 50%,
+      rgba(244, 208, 63, 0.1) 100%
+    );
+  }
+
+  .numberBadge {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-bottom: 0;
+  }
+
+  .iconWrapper {
+    margin-left: var(--spacing-xl);
+  }
+
+  .content {
+    margin-left: var(--spacing-xl);
+  }
+
+  .title {
+    font-size: var(--font-size-lg);
+  }
+
+  .description {
+    font-size: var(--font-size-xs);
+  }
+}

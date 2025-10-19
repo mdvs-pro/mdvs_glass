@@ -1,0 +1,105 @@
+/* ============================================
+   LIQUID GLASS WRAPPER
+   4-Layer Structure for Realistic Glass Effect
+   ============================================ */
+
+.liquidGlassWrapper {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  box-shadow:
+    0 6px 6px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+  cursor: default;
+}
+
+/* Hover Effect */
+.liquidGlassWrapper.hover {
+  cursor: pointer;
+}
+
+.liquidGlassWrapper.hover:hover {
+  transform: scale(1.01) translateY(-2px);
+}
+
+/* ============================================
+   LAYER 1: Glass Effect with Distortion
+   ============================================ */
+.liquidGlassEffect {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* Backdrop blur for glass effect */
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
+  /* SVG filter applied via inline style */
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* ============================================
+   LAYER 2: Semi-transparent Tint
+   ============================================ */
+.liquidGlassTint {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* Semi-transparent white overlay */
+  background: rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+}
+
+/* ============================================
+   LAYER 3: Specular Highlights (Glass Shine)
+   ============================================ */
+.liquidGlassShine {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+
+  /* Inset box-shadow for realistic glass highlights */
+  box-shadow:
+    inset 2px 2px 1px rgba(255, 255, 255, 0.5),
+    inset -1px -1px 1px 1px rgba(255, 255, 255, 0.5);
+
+  pointer-events: none;
+}
+
+/* ============================================
+   LAYER 4: Content
+   ============================================ */
+.liquidGlassContent {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .liquidGlassWrapper.hover:hover {
+    transform: scale(1.005) translateY(-1px);
+  }
+
+  .liquidGlassEffect {
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+}

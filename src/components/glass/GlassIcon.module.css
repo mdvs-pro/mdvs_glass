@@ -1,0 +1,213 @@
+/* ============================================
+   GLASS ICON COMPONENT
+   ============================================ */
+
+.glassIcon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   GLASS LAYERS (4-layer system)
+   ============================================ */
+
+/* Layer 1: Base - Dark foundation */
+.glassBase {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.6);
+  z-index: 1;
+}
+
+/* Layer 2: Filter - Backdrop blur */
+.glassFilter {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  z-index: 2;
+}
+
+/* Layer 3: Overlay - Gradient shine */
+.glassOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.02) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  z-index: 3;
+}
+
+/* Layer 4: Border - Glass edge with glow */
+.glassBorder {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 4;
+}
+
+/* Icon Content Layer */
+.iconContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-yellow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   SIZE VARIANTS
+   ============================================ */
+
+/* Small - 40px */
+.sizeSmall {
+  width: 40px;
+  height: 40px;
+}
+
+.sizeSmall .iconContent {
+  font-size: 1.25rem; /* 20px */
+}
+
+.sizeSmall .iconContent svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Medium - 56px */
+.sizeMedium {
+  width: 56px;
+  height: 56px;
+}
+
+.sizeMedium .iconContent {
+  font-size: 1.75rem; /* 28px */
+}
+
+.sizeMedium .iconContent svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Large - 72px */
+.sizeLarge {
+  width: 72px;
+  height: 72px;
+}
+
+.sizeLarge .iconContent {
+  font-size: 2.25rem; /* 36px */
+}
+
+.sizeLarge .iconContent svg {
+  width: 36px;
+  height: 36px;
+}
+
+/* ============================================
+   SHAPE VARIANTS
+   ============================================ */
+
+/* Circle Variant */
+.variantCircle .glassBase,
+.variantCircle .glassFilter,
+.variantCircle .glassOverlay,
+.variantCircle .glassBorder {
+  border-radius: 50%;
+}
+
+/* Square Variant */
+.variantSquare .glassBase,
+.variantSquare .glassFilter,
+.variantSquare .glassOverlay,
+.variantSquare .glassBorder {
+  border-radius: 12px;
+}
+
+/* None Variant - No background */
+.variantNone {
+  background: none;
+  border: none;
+}
+
+/* ============================================
+   HOVER STATES
+   ============================================ */
+
+.glassIcon:hover .glassBase {
+  background: rgba(26, 26, 26, 0.7);
+}
+
+.glassIcon:hover .glassOverlay {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(244, 208, 63, 0.05) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+.glassIcon:hover .glassBorder {
+  border-color: rgba(244, 208, 63, 0.4);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3),
+    0 4px 16px rgba(0, 0, 0, 0.4),
+    0 0 24px rgba(244, 208, 63, 0.2);
+}
+
+.glassIcon:hover .iconContent {
+  color: var(--brand-yellow-light);
+  transform: scale(1.05);
+}
+
+/* Disable hover for 'none' variant */
+.variantNone:hover .iconContent {
+  transform: none;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .sizeLarge {
+    width: 64px;
+    height: 64px;
+  }
+
+  .sizeLarge .iconContent {
+    font-size: 2rem;
+  }
+
+  .sizeLarge .iconContent svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .sizeMedium {
+    width: 48px;
+    height: 48px;
+  }
+
+  .sizeMedium .iconContent {
+    font-size: 1.5rem;
+  }
+
+  .sizeMedium .iconContent svg {
+    width: 24px;
+    height: 24px;
+  }
+}
