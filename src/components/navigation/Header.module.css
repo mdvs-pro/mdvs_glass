@@ -75,6 +75,10 @@
   transition: all 0.3s ease;
 }
 
+.logo:focus {
+  outline: none;
+}
+
 .logo:hover {
   transform: scale(1.05);
 }
@@ -109,6 +113,10 @@
   font-size: 1rem;
 
   transition: all 0.3s ease;
+}
+
+.navLink:focus {
+  outline: none;
 }
 
 .navLink::after {
@@ -152,6 +160,10 @@
   cursor: pointer;
 
   z-index: 1001;
+}
+
+.hamburger:focus {
+  outline: none;
 }
 
 .hamburgerLine {

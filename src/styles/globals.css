@@ -5,6 +5,7 @@
 /* Import Design System Modules */
 @import './variables.css';
 @import './glass-system.css';
+@import './liquid-glass-effects.css';
 @import './animations.css';
 @import './typography.css';
 

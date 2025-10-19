@@ -11,7 +11,7 @@
   margin: 0.5rem;
   border-radius: 2.5rem;
 
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   color: black;
   text-decoration: none;
@@ -31,8 +31,7 @@
 .liquidGlassWrapper:hover {
   transform: translateY(-4px);
   box-shadow:
-    0 12px 24px rgba(0, 0, 0, 0.3),
-    0 0 30px rgba(244, 208, 63, 0.4);
+    0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* ============================================
@@ -67,7 +66,12 @@
   overflow: hidden;
 
   /* Default fallback gradient if no image provided */
-  background: linear-gradient(135deg, #f4d03f 0%, #d4a017 50%, #f9e79f 100%);
+  background: linear-gradient(
+    135deg,
+    var(--brand-yellow) 0%,
+    var(--brand-yellow-dark) 50%,
+    var(--brand-yellow-light) 100%
+  );
 
   /* Image settings - will be overridden by inline style */
   background-position: 0% 0%;
@@ -98,6 +102,7 @@
 
   overflow: hidden;
   isolation: isolate;
+  border-radius: inherit;
 }
 
 /* Layer 2: Semi-transparent White Tint */
@@ -107,6 +112,7 @@
   inset: 0;
 
   background: rgba(255, 255, 255, 0.25);
+  border-radius: inherit;
 }
 
 /* Layer 3: Specular Shine (Inset Shadow) */
@@ -153,47 +159,57 @@
   color: #000000;
 }
 
-/* Secondary: Darker tint with yellow text */
+.variantPrimary:hover {
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(244, 208, 63, 0.4);
+}
+
+/* Secondary: Darker tint with white text */
 .variantSecondary .liquidGlassTint {
   background: rgba(0, 0, 0, 0.5); /* Darker overlay */
 }
 
 .variantSecondary .liquidGlassText {
-  color: #f4d03f;
+  color: #ffffff;
 }
 
 .variantSecondary {
-  border: 1px solid rgba(244, 208, 63, 0.4);
+  border: 1px solid rgba(var(--color-secondary-rgb), 0.4);
 }
 
 .variantSecondary:hover {
-  border-color: rgba(244, 208, 63, 0.7);
+  border-color: rgba(var(--color-secondary-rgb), 0.7);
   box-shadow:
     0 12px 24px rgba(0, 0, 0, 0.4),
-    0 0 30px rgba(244, 208, 63, 0.3);
+    0 0 30px rgba(var(--color-secondary-rgb), 0.3);
 }
 
 /* Outline: Light tint with white text */
 .variantOutline .liquidGlassTint {
-  background: rgba(255, 255, 255, 0.08); /* Very light overlay */
+  background: transparent; /* No overlay - pure glass */
 }
 
 .variantOutline .liquidGlassText {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .variantOutline {
-  border: 2px solid rgba(244, 208, 63, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow:
     0 4px 8px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .variantOutline:hover {
-  border-color: rgba(244, 208, 63, 0.9);
+  border-color: rgba(244, 208, 63, 0.5);
   box-shadow:
     0 8px 16px rgba(0, 0, 0, 0.2),
-    0 0 20px rgba(244, 208, 63, 0.2);
+    0 0 20px rgba(244, 208, 63, 0.1);
+}
+
+.variantOutline:hover .liquidGlassText {
+  color: rgba(255, 255, 255, 1);
 }
 
 /* ============================================

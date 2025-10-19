@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import '@/styles/globals.css'
 import GlassFilters from '@/components/glass/GlassFilters'
+import LiquidGlassFilters from '@/components/glass/LiquidGlassFilters'
 import Header from '@/components/navigation/Header'
 import Footer from '@/components/navigation/Footer'
 
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <GlassFilters />
+        <LiquidGlassFilters />
         <Header />
         <main>{children}</main>
         <Footer />

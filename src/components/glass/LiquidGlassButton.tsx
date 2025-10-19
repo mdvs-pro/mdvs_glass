@@ -82,19 +82,32 @@ export default function LiquidGlassButton({
         : {})}
       {...(Component === 'button' ? { type: 'button', disabled: disabled || loading } : {})}
     >
-      <div
-        className={styles.liquidGlassBackground}
-        style={
-          backgroundImage
-            ? {
-                backgroundImage: `url(${backgroundImage})`,
-              }
-            : undefined
-        }
-      ></div>
-      <div className={styles.liquidGlassEffect}></div>
-      <div className={styles.liquidGlassTint}></div>
-      <div className={styles.liquidGlassShine}></div>
+      {/* Complex liquid glass layers only for primary variant */}
+      {variant === 'primary' && (
+        <>
+          <div
+            className={styles.liquidGlassBackground}
+            style={
+              backgroundImage
+                ? {
+                    backgroundImage: `url(${backgroundImage})`,
+                  }
+                : undefined
+            }
+          ></div>
+          <div className={styles.liquidGlassEffect}></div>
+          <div className={styles.liquidGlassTint}></div>
+          <div className={styles.liquidGlassShine}></div>
+        </>
+      )}
+
+      {/* Simple tint layer for secondary only */}
+      {variant === 'secondary' && (
+        <div className={styles.liquidGlassTint}></div>
+      )}
+
+      {/* Outline is minimal - just border + text, no layers */}
+
       <div className={styles.liquidGlassText}>
         {loading && (
           <span className={styles.spinner} aria-label="Loading"></span>

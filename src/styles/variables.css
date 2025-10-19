@@ -79,6 +79,12 @@
   --brand-black: #1a1a1a;
   --brand-white: #ffffff;
 
+  /* Secondary Color - Purple accent for secondary variants */
+  --color-secondary: #9B59B6;
+  --color-secondary-light: #BB8FCE;
+  --color-secondary-dark: #7D3C98;
+  --color-secondary-rgb: 155, 89, 182;
+
   /* ============================================
      BASE COLORS
      ============================================ */

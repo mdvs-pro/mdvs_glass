@@ -221,16 +221,19 @@
   box-shadow: var(--shadow-yellow-strong);
 }
 
-/* Secondary Button - Dark with Yellow Border */
+/* Secondary Button - Dark with Yellow/Secondary Border */
 .glass-button-secondary {
   background: rgba(26, 26, 26, 0.4);
-  color: var(--brand-yellow);
-  border: 1px solid var(--border-medium);
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  border-color: rgba(var(--color-secondary-rgb), 0.4);
 }
 
 .glass-button-secondary:hover {
-  background: rgba(26, 26, 26, 0.6);
-  border-color: var(--border-strong);
+  background: rgba(var(--color-secondary-rgb), 0.1);
+  border-color: var(--color-secondary);
+  color: var(--color-secondary-light);
+  box-shadow: 0 4px 16px rgba(var(--color-secondary-rgb), 0.25);
 }
 
 /* ============================================
