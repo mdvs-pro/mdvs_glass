@@ -7,15 +7,19 @@
 ## 🎯 GOLDEN RULES
 
 ### 1. Consistency над швидкістю
+
 Краще зробити повільніше, але консистентно, ніж швидко але по-різному.
 
 ### 2. Reuse над створенням
+
 Завжди спочатку шукай існуюче рішення, тільки потім створюй нове.
 
 ### 3. Approval над автономією
+
 Кожен компонент проходить перевірку. Без виключень.
 
 ### 4. Documentation обов'язкова
+
 Що не задокументовано - не існує для інших розробників.
 
 ---
@@ -58,6 +62,7 @@
 #### Крок 1: Дизайн компонента (30-60 хв)
 
 **Checklist:**
+
 - [ ] Переглянути `glass-system.css` - які класи можу реюзати?
 - [ ] Використати існуючі CSS змінні з `variables.css`
 - [ ] Визначити Props interface
@@ -65,6 +70,7 @@
 - [ ] Спланувати states (hover, active, disabled, loading)
 
 **Приклад Props planning:**
+
 ```typescript
 interface ComponentNameProps {
   // Required
@@ -147,6 +153,7 @@ export default function ComponentName({
 ```
 
 **Важливо:**
+
 - ✅ Використовувати існуючі glass класи
 - ✅ Додавати коментарі
 - ✅ Type safety (TypeScript)
@@ -215,16 +222,19 @@ export default function TestComponentsPage() {
 #### Підготовка до approval:
 
 **1. Запустити dev server:**
+
 ```bash
 npm run dev
 ```
 
 **2. Відкрити test page:**
+
 ```
 http://localhost:3000/test-components
 ```
 
 **3. Зробити screenshots:**
+
 - Desktop view - всі variants
 - Desktop view - всі sizes
 - Desktop view - всі states
@@ -237,50 +247,61 @@ http://localhost:3000/test-components
 # ComponentName - Approval Request
 
 ## Overview
+
 [Короткий опис що робить компонент]
 
 ## Screenshots
 
 ### Desktop - Variants
+
 ![Variants](screenshots/variants.png)
 
 ### Desktop - Sizes
+
 ![Sizes](screenshots/sizes.png)
 
 ### Desktop - States
+
 ![States](screenshots/states.png)
 
 ### Hover Effects
+
 [Link to screen recording or GIF]
 
 ### Mobile View
+
 ![Mobile](screenshots/mobile.png)
 
 ## Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
+
+| Prop    | Type   | Default   | Description    |
+| ------- | ------ | --------- | -------------- |
 | variant | string | 'primary' | Visual variant |
-| size | string | 'medium' | Size variant |
-| ... | ... | ... | ... |
+| size    | string | 'medium'  | Size variant   |
+| ...     | ...    | ...       | ...            |
 
 ## CSS Classes Used
+
 - `.glass-component` (from glass-system.css)
 - `.glass-button-primary` (from glass-system.css)
 - Custom spacing utilities
 
 ## Planned Usage
+
 - Homepage: Hero CTA (2 instances)
 - Service pages: CTAs (6 instances)
 - Contact form: Submit (1 instance)
 - **Total projected: 15+ instances**
 
 ## Notes
+
 - Reuses existing GlassCard structure
 - All colors from design tokens
 - Fully responsive
 - Accessibility: keyboard navigation works
 
 ## Questions
+
 1. Чи достатньо виразний hover effect?
 2. Чи потрібен додатковий variant "ghost"?
 3. Чи розмір "medium" підходить як default?
@@ -295,6 +316,7 @@ http://localhost:3000/test-components
 #### ✋ ЗУПИНКА - Чекаємо approval
 
 **Що робити:**
+
 1. Відправити approval document
 2. Показати live demo на localhost
 3. Відповісти на питання
@@ -323,6 +345,7 @@ APPROVED   REJECTED
 ### Фаза 4: Після Approval ✅
 
 #### Крок 1: Фіксы (якщо потрібні) (30-60 хв)
+
 - Внести зміни з review
 - Повторно протестувати
 - Оновити screenshots якщо суттєві зміни
@@ -333,6 +356,7 @@ APPROVED   REJECTED
 
 ```markdown
 #### ✅ ComponentName
+
 **Status:** ✅ Approved
 **File:** `src/components/path/ComponentName.tsx`
 **Approved Date:** 2025-01-15
@@ -394,6 +418,7 @@ Closes #TASK_NUMBER"
 #### При використанні в сторінці:
 
 **Checklist:**
+
 - [ ] Імпортувати з правильного шляху
 - [ ] Використовувати затверджені variants
 - [ ] НЕ додавати inline styles поверх
@@ -460,11 +485,13 @@ import GlassButton from '@/components/glass/GlassButton'
 ### Приклад робочого дня:
 
 **9:00-10:00** - Planning
+
 - Review завдань на день
 - Перевірка COMPONENT_REGISTRY.md
 - Визначення що можна реюзати
 
 **10:00-12:00** - Development
+
 - Створення GlassButton
 - Всі variants + states
 - Test page setup
@@ -472,29 +499,35 @@ import GlassButton from '@/components/glass/GlassButton'
 **12:00-13:00** - Lunch break
 
 **13:00-13:30** - Approval preparation
+
 - Screenshots
 - Approval document
 - Demo preparation
 
 **13:30-14:00** - Approval meeting
+
 - Показ компонента
 - Обговорення feedback
 - Approval або список фіксів
 
 **14:00-15:00** - Fixes (якщо потрібно)
+
 - Внесення змін
 - Re-testing
 
 **15:00-15:30** - Documentation
+
 - Update COMPONENT_REGISTRY.md
 - Commit changes
 
 **15:30-17:00** - Usage
+
 - Використання в Homepage Hero
 - Тестування в контексті
 - Final testing
 
 **17:00-17:30** - Wrap up
+
 - Commit day's work
 - Update TODO list
 - Plan next day

@@ -45,13 +45,7 @@ export default function GlassTag({
     medium: styles.sizeMedium,
   }[size]
 
-  const classes = [
-    styles.glassTag,
-    variantClass,
-    sizeClass,
-    onClick && styles.clickable,
-    className,
-  ]
+  const classes = [styles.glassTag, variantClass, sizeClass, onClick && styles.clickable, className]
     .filter(Boolean)
     .join(' ')
 
@@ -77,7 +71,7 @@ export default function GlassTag({
         {removable && (
           <button
             className={styles.removeButton}
-            onClick={(e) => {
+            onClick={e => {
               e.stopPropagation()
               onRemove?.()
             }}

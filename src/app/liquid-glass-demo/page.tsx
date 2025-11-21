@@ -52,11 +52,7 @@ export default function LiquidGlassDemoPage() {
             <h2 className={styles.sectionTitle}>Різні варіанти дисторсії</h2>
             <div className={styles.cardsGrid}>
               {/* No Distortion */}
-              <LiquidGlassWrapper
-                distortion="none"
-                borderRadius="16px"
-                className={styles.demoCard}
-              >
+              <LiquidGlassWrapper distortion="none" borderRadius="16px" className={styles.demoCard}>
                 <h3>No Distortion</h3>
                 <p>Класичний glassmorphism без SVG фільтрів</p>
               </LiquidGlassWrapper>
@@ -68,7 +64,7 @@ export default function LiquidGlassDemoPage() {
                 className={styles.demoCard}
               >
                 <h3>Subtle Distortion</h3>
-                <p>М'яке викривлення для тонкого ефекту</p>
+                <p>М&apos;яке викривлення для тонкого ефекту</p>
               </LiquidGlassWrapper>
 
               {/* Normal Distortion */}
@@ -102,49 +98,37 @@ export default function LiquidGlassDemoPage() {
               <LiquidGlassWrapper className={styles.featureCard}>
                 <div className={styles.featureIcon}>🎯</div>
                 <h3>4-Layer Structure</h3>
-                <p>
-                  Effect → Tint → Shine → Content створюють реалістичну глибину
-                </p>
+                <p>Effect → Tint → Shine → Content створюють реалістичну глибину</p>
               </LiquidGlassWrapper>
 
               <LiquidGlassWrapper className={styles.featureCard}>
                 <div className={styles.featureIcon}>🌈</div>
                 <h3>Specular Lighting</h3>
-                <p>
-                  Динамічні відблиски світла як на справжньому склі
-                </p>
+                <p>Динамічні відблиски світла як на справжньому склі</p>
               </LiquidGlassWrapper>
 
               <LiquidGlassWrapper className={styles.featureCard}>
                 <div className={styles.featureIcon}>⚡</div>
                 <h3>Performance</h3>
-                <p>
-                  Оптимізовані анімації з GPU acceleration
-                </p>
+                <p>Оптимізовані анімації з GPU acceleration</p>
               </LiquidGlassWrapper>
 
               <LiquidGlassWrapper className={styles.featureCard}>
                 <div className={styles.featureIcon}>📱</div>
                 <h3>Responsive</h3>
-                <p>
-                  Адаптивний дизайн для всіх пристроїв
-                </p>
+                <p>Адаптивний дизайн для всіх пристроїв</p>
               </LiquidGlassWrapper>
 
               <LiquidGlassWrapper className={styles.featureCard}>
                 <div className={styles.featureIcon}>🎨</div>
                 <h3>Customizable</h3>
-                <p>
-                  Повний контроль над кольорами та ефектами
-                </p>
+                <p>Повний контроль над кольорами та ефектами</p>
               </LiquidGlassWrapper>
 
               <LiquidGlassWrapper className={styles.featureCard}>
                 <div className={styles.featureIcon}>♿</div>
                 <h3>Accessible</h3>
-                <p>
-                  Підтримка високого контрасту та читабельності
-                </p>
+                <p>Підтримка високого контрасту та читабельності</p>
               </LiquidGlassWrapper>
             </div>
           </div>
@@ -162,12 +146,8 @@ export default function LiquidGlassDemoPage() {
               <h2>Готові використати у своєму проекті?</h2>
               <p>Всі компоненти доступні та готові до використання</p>
               <div className={styles.ctaButtons}>
-                <button className={styles.primaryButton}>
-                  Почати роботу
-                </button>
-                <button className={styles.secondaryButton}>
-                  Документація
-                </button>
+                <button className={styles.primaryButton}>Почати роботу</button>
+                <button className={styles.secondaryButton}>Документація</button>
               </div>
             </LiquidGlassWrapper>
           </div>

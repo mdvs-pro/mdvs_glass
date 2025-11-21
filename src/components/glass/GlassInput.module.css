@@ -129,11 +129,7 @@ textarea.input {
 
 /* Variant: Filled */
 .variantFilled .glassBackground {
-  background: linear-gradient(
-    135deg,
-    rgba(244, 208, 63, 0.15) 0%,
-    rgba(212, 160, 23, 0.15) 100%
-  );
+  background: linear-gradient(135deg, rgba(244, 208, 63, 0.15) 0%, rgba(212, 160, 23, 0.15) 100%);
 }
 
 .variantFilled .glassOverlay {

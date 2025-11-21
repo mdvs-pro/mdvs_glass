@@ -69,21 +69,13 @@ export default function LiquidGlassWrapper({
       />
 
       {/* Layer 2: Tint Overlay */}
-      <div
-        className={styles.liquidGlassTint}
-        style={layerStyle}
-      />
+      <div className={styles.liquidGlassTint} style={layerStyle} />
 
       {/* Layer 3: Specular Highlights */}
-      <div
-        className={styles.liquidGlassShine}
-        style={layerStyle}
-      />
+      <div className={styles.liquidGlassShine} style={layerStyle} />
 
       {/* Layer 4: Content */}
-      <div className={styles.liquidGlassContent}>
-        {children}
-      </div>
+      <div className={styles.liquidGlassContent}>{children}</div>
     </div>
   )
 }

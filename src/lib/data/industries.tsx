@@ -1,17 +1,18 @@
+import { ReactElement } from 'react'
 import {
   FaChartLine,
   FaHeartbeat,
   FaBuilding,
   FaRocket,
   FaGraduationCap,
-  FaCalendarAlt
+  FaCalendarAlt,
 } from 'react-icons/fa'
 
 export interface Industry {
   id: string
   name: string
   description: string
-  icon: JSX.Element
+  icon: ReactElement
   projectCount?: number
   technologies: string[]
   href: string
@@ -21,7 +22,8 @@ export const industries: Industry[] = [
   {
     id: 'fintech',
     name: 'FinTech',
-    description: 'Digital banking, payment systems, and financial management platforms with enterprise-grade security.',
+    description:
+      'Digital banking, payment systems, and financial management platforms with enterprise-grade security.',
     icon: <FaChartLine />,
     projectCount: 15,
     technologies: ['React', 'Node.js', 'Stripe', 'PostgreSQL', 'Security'],
@@ -39,7 +41,8 @@ export const industries: Industry[] = [
   {
     id: 'realestate',
     name: 'Real Estate',
-    description: 'Property listings, virtual tours, CRM integration, and booking systems for real estate.',
+    description:
+      'Property listings, virtual tours, CRM integration, and booking systems for real estate.',
     icon: <FaBuilding />,
     projectCount: 18,
     technologies: ['WordPress', 'Interactive Maps', 'Virtual Tours', 'CRM'],
@@ -48,7 +51,8 @@ export const industries: Industry[] = [
   {
     id: 'saas',
     name: 'SaaS',
-    description: 'Scalable cloud platforms, subscription management, and enterprise software solutions.',
+    description:
+      'Scalable cloud platforms, subscription management, and enterprise software solutions.',
     icon: <FaRocket />,
     projectCount: 25,
     technologies: ['Next.js', 'AWS', 'Microservices', 'Analytics', 'APIs'],
@@ -66,7 +70,8 @@ export const industries: Industry[] = [
   {
     id: 'events',
     name: 'Events',
-    description: 'Event management platforms, ticketing systems, live streaming, and attendee engagement.',
+    description:
+      'Event management platforms, ticketing systems, live streaming, and attendee engagement.',
     icon: <FaCalendarAlt />,
     projectCount: 14,
     technologies: ['Event Management', 'Live Streaming', 'Ticketing', 'Networking'],

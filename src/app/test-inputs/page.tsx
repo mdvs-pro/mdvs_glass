@@ -19,23 +19,15 @@ export default function TestInputsPage() {
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Базові інпути</h2>
           <div className={styles.grid}>
-            <GlassInput
-              type="text"
-              placeholder="Введіть ім'я"
-              label="Ім'я"
-            />
+            <GlassInput type="text" placeholder="Введіть ім'я" label="Ім'я" />
             <GlassInput
               type="email"
               placeholder="email@example.com"
               label="Email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={e => setEmail(e.target.value)}
             />
-            <GlassInput
-              type="tel"
-              placeholder="+380 XX XXX XX XX"
-              label="Телефон"
-            />
+            <GlassInput type="tel" placeholder="+380 XX XXX XX XX" label="Телефон" />
           </div>
         </section>
 
@@ -43,12 +35,7 @@ export default function TestInputsPage() {
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>З іконками</h2>
           <div className={styles.grid}>
-            <GlassInput
-              type="text"
-              placeholder="Пошук..."
-              label="Пошук"
-              icon={<span>🔍</span>}
-            />
+            <GlassInput type="text" placeholder="Пошук..." label="Пошук" icon={<span>🔍</span>} />
             <GlassInput
               type="email"
               placeholder="your@email.com"
@@ -69,12 +56,7 @@ export default function TestInputsPage() {
               label="Поле з помилкою"
               error="Це поле обов'язкове"
             />
-            <GlassInput
-              type="text"
-              placeholder="Disabled"
-              label="Disabled"
-              disabled
-            />
+            <GlassInput type="text" placeholder="Disabled" label="Disabled" disabled />
             <GlassInput
               type="text"
               placeholder="Required"
@@ -95,12 +77,7 @@ export default function TestInputsPage() {
               label="Default"
               variant="default"
             />
-            <GlassInput
-              type="text"
-              placeholder="Filled variant"
-              label="Filled"
-              variant="filled"
-            />
+            <GlassInput type="text" placeholder="Filled variant" label="Filled" variant="filled" />
           </div>
         </section>
 
@@ -113,7 +90,7 @@ export default function TestInputsPage() {
             placeholder="Введіть ваше повідомлення..."
             label="Повідомлення"
             value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            onChange={e => setMessage(e.target.value)}
             helperText={`${message.length} символів`}
           />
         </section>
@@ -121,15 +98,9 @@ export default function TestInputsPage() {
         {/* Real Form Example */}
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Приклад: Контактна форма</h2>
-          <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
+          <form className={styles.form} onSubmit={e => e.preventDefault()}>
             <div className={styles.formRow}>
-              <GlassInput
-                type="text"
-                placeholder="Іван Іваненко"
-                label="Ім'я"
-                required
-                fullWidth
-              />
+              <GlassInput type="text" placeholder="Іван Іваненко" label="Ім'я" required fullWidth />
             </div>
             <div className={styles.formRow}>
               <GlassInput
@@ -142,12 +113,7 @@ export default function TestInputsPage() {
               />
             </div>
             <div className={styles.formRow}>
-              <GlassInput
-                type="text"
-                placeholder="Тема повідомлення"
-                label="Тема"
-                fullWidth
-              />
+              <GlassInput type="text" placeholder="Тема повідомлення" label="Тема" fullWidth />
             </div>
             <div className={styles.formRow}>
               <GlassInput
@@ -183,9 +149,9 @@ export default function TestInputsPage() {
             <br />
             <code>icon</code> - іконка (ReactNode)
             <br />
-            <code>iconPosition</code> - "left" | "right"
+            <code>iconPosition</code> - &quot;left&quot; | &quot;right&quot;
             <br />
-            <code>variant</code> - "default" | "filled"
+            <code>variant</code> - &quot;default&quot; | &quot;filled&quot;
             <br />
             <code>multiline</code> - textarea режим
             <br />

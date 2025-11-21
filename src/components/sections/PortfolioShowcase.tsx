@@ -35,7 +35,7 @@ export default function PortfolioShowcase({
 
         {/* Projects Grid */}
         <div className={styles.projectsGrid}>
-          {displayProjects.map((project) => (
+          {displayProjects.map(project => (
             <ProjectCard
               key={project.id}
               title={project.title}

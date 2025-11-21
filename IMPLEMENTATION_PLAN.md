@@ -31,6 +31,7 @@
 ## 🏗️ ПОТОЧНИЙ СТАН (Що вже є)
 
 ### ✅ Готові Foundation елементи:
+
 - `src/styles/variables.css` - Повна система змінних (4 палітри + secondary color #9B59B6)
 - `src/styles/glass-system.css` - Базова система glass компонентів
 - `src/styles/typography.css` - Typography system
@@ -38,29 +39,35 @@
 - `src/components/glass/GlassCard.tsx` - Основний glass card з mouse tracking
 
 ### ✅ Готові Atoms:
+
 - `GlassCard` - Базовий wrapper з mouse tracking (3 варіанти)
 - `LiquidGlassButton` - Кнопка з liquid glass effect (3 варіанти, 3 розміри)
 - `GlassInput` - Input з glass effect (text, email, textarea, error states)
 - `GlassTag` - Tag/Badge з glass effect (4 варіанти, removable)
 
 ### ✅ Готові Molecules:
+
 - `MetricCard` - Карточка метрики з animated counter
 
 ### ✅ Готові Layout компоненти:
+
 - `Header` - Fixed header з backdrop blur, mobile menu
 - `Footer` - Footer з links та social
 - `MobileMenu` - Mobile navigation overlay
 
 ### ✅ Готові Homepage секції:
+
 - Hero section з CTA button
 - MetricsBar section з 4 animated metric cards
 - Services section (базова версія)
 - CTA section
 
 ### 📦 Dependencies:
+
 - React Icons (react-icons) - для іконок
 
 ### 📦 Готові базові класи:
+
 - `.glass-component` - базовий wrapper
 - `.glass-card` / `.glass-card-small` / `.glass-card-large`
 - `.glass-button` / `.glass-button-primary` / `.glass-button-secondary`
@@ -103,6 +110,7 @@
 ### 🎯 Правило Реюзу:
 
 **Перед створенням нового компоненту - ПЕРЕВІРИТИ:**
+
 1. Чи є подібний компонент?
 2. Чи можна розширити існуючий через props?
 3. Чи можна використати composition?
@@ -119,6 +127,7 @@
 ### Мета: Створити бібліотеку переісповнюваних компонентів
 
 ### 1.1 Підготовка структури проекту
+
 **Час: 2 години**
 
 ```bash
@@ -151,15 +160,18 @@ src/
 ### 1.2 Створення базових Glass Atoms (по одному!)
 
 #### Component 1.2.1: LiquidGlassButton.tsx
+
 **Час: 1 година**
 **Status:** ✅ COMPLETED
 
 **Variants:**
+
 - Primary (yellow gradient) - для main CTAs
 - Secondary (purple accent) - для secondary actions
 - Outline (light border) - для tertiary actions
 
 **Props:**
+
 ```typescript
 interface LiquidGlassButtonProps {
   variant: 'primary' | 'secondary' | 'outline'
@@ -177,6 +189,7 @@ interface LiquidGlassButtonProps {
 ```
 
 **✅ APPROVED:**
+
 - [x] UI Review кнопок (всі варіанти)
 - [x] Hover states з lift effect
 - [x] Active states
@@ -188,16 +201,19 @@ interface LiquidGlassButtonProps {
 ---
 
 #### Component 1.2.2: GlassInput.tsx
+
 **Час: 1.5 години**
 **Status:** ✅ COMPLETED
 
 **Variants:**
+
 - Text input
 - Textarea
 - With icon
 - With error state
 
 **Props:**
+
 ```typescript
 interface GlassInputProps {
   type: 'text' | 'email' | 'tel' | 'textarea'
@@ -211,6 +227,7 @@ interface GlassInputProps {
 ```
 
 **✅ APPROVED:**
+
 - [x] UI Review inputs
 - [x] Focus states
 - [x] Error states
@@ -219,12 +236,14 @@ interface GlassInputProps {
 ---
 
 #### Component 1.2.3: GlassTag.tsx
+
 **Час: 30 хв**
 **Status:** ✅ COMPLETED
 
 **Використання:** Tech stack tags, industry tags, category badges
 
 **Props:**
+
 ```typescript
 interface GlassTagProps {
   text: string
@@ -236,18 +255,21 @@ interface GlassTagProps {
 ```
 
 **✅ APPROVED:**
+
 - [x] UI Review tags (всі розміри)
 - [x] Hover states для clickable
 
 ---
 
 #### Component 1.2.4: GlassIcon.tsx
+
 **Час: 45 хв**
 **Status:** ✅ COMPLETED
 
 **Обгортка для іконок з glass ефектом**
 
 **Props:**
+
 ```typescript
 interface GlassIconProps {
   icon: ReactNode
@@ -259,6 +281,7 @@ interface GlassIconProps {
 ```
 
 **✅ APPROVED:**
+
 - [x] UI Review icons в різних варіантах (circle, square, none)
 - [x] 4-layer glass system (base, filter, overlay, border)
 - [x] Custom colors support
@@ -269,14 +292,17 @@ interface GlassIconProps {
 ### 1.3 Створення Layout компонентів
 
 #### Component 1.3.1: Navigation.tsx
+
 **Час: 3 години**
 
 **Структура:**
+
 ```
 [Logo] [Menu Items] [Language] [CTA Button]
 ```
 
 **Features:**
+
 - Sticky navigation
 - Backdrop blur on scroll
 - Active menu item highlight
@@ -284,6 +310,7 @@ interface GlassIconProps {
 - Smooth scroll
 
 **✋ APPROVAL CHECKPOINT:**
+
 - [ ] Desktop navigation UI
 - [ ] Mobile menu UI
 - [ ] Scroll behavior
@@ -293,9 +320,11 @@ interface GlassIconProps {
 ---
 
 #### Component 1.3.2: Footer.tsx
+
 **Час: 2 години**
 
 **Структура:**
+
 ```
 [Logo + Tagline] [Services] [Tech] [Company] [Resources]
 [Social Links]
@@ -303,6 +332,7 @@ interface GlassIconProps {
 ```
 
 **✋ APPROVAL CHECKPOINT:**
+
 - [ ] Footer layout
 - [ ] Links styling
 - [ ] Social icons
@@ -311,22 +341,25 @@ interface GlassIconProps {
 ---
 
 #### Component 1.3.3: PageHeader.tsx (Hero pattern)
+
 **Час: 2 години**
 **Status:** ✅ COMPLETED
 
 **Reusable hero для internal pages**
 
 **Props:**
+
 ```typescript
 interface PageHeaderProps {
   title: string
   subtitle?: string
-  breadcrumbs?: Array<{label: string, href: string}>
+  breadcrumbs?: Array<{ label: string; href: string }>
   backgroundVariant?: 'default' | 'gradient' | 'pattern'
 }
 ```
 
 **✅ APPROVED:**
+
 - [x] Hero variants (default, gradient, pattern backgrounds)
 - [x] Typography hierarchy
 - [x] Breadcrumbs style with Home icon
@@ -340,20 +373,24 @@ interface PageHeaderProps {
 ### ⚠️ ПРАВИЛО: Реюзати компоненти з Фази 1!
 
 ### 2.1 Hero Section
+
 **Час: 3 години**
 **Status:** ✅ COMPLETED
 
 **Компоненти що використовуємо:**
+
 - ✅ `GlassCard` (для hero container)
 - ✅ `LiquidGlassButton` (primary CTAs)
 - Built-in hero content
 
 **Елементи:**
+
 - Заголовок + підзаголовок
 - CTA кнопка "Start Your Project"
 - Minimal clean design
 
 **✅ APPROVED:**
+
 - [x] Hero layout
 - [x] Typography sizes
 - [x] CTA button placement with backgroundImage
@@ -362,13 +399,16 @@ interface PageHeaderProps {
 ---
 
 ### 2.2 MetricsBar Section
+
 **Час: 2 години**
 **Status:** ✅ COMPLETED
 
 **Компоненти:**
+
 - ✅ `MetricCard.tsx` - Статистика з animated counter
 
 **Props:**
+
 ```typescript
 interface MetricCardProps {
   icon?: ReactNode
@@ -381,11 +421,13 @@ interface MetricCardProps {
 ```
 
 **Layout:**
+
 - Desktop: 4 columns grid
 - Tablet: 2 columns grid
 - Mobile: 1 column
 
 **✅ APPROVED:**
+
 - [x] Metric card design (схоже на service cards)
 - [x] React Icons іконки (FaRocket, FaBriefcase, FaUsers, FaStar)
 - [x] Animated counter з ease-out easing
@@ -396,23 +438,28 @@ interface MetricCardProps {
 ---
 
 ### 2.3 ServiceTabs Section
+
 **Час: 4 години**
 **Status:** ✅ COMPLETED
 
 **Компоненти:**
+
 - ✅ `ServiceTabs.tsx` - Tab switching section
 - ✅ `ServiceCard.tsx` - Service offering card
 - ✅ Реюз `LiquidGlassButton` (secondary variant)
 - ✅ Реюз `GlassIcon` (large circle variant)
 
 **Variants:**
+
 - Tab 1: Staff Augmentation (3 services)
 - Tab 2: Custom Development (3 services)
 
 **Data:**
+
 - `lib/data/services.tsx` - Service data structure
 
 **✅ APPROVED:**
+
 - [x] Tab switching UI (iOS-style compact design)
 - [x] Service card layout (direct glass styling)
 - [x] Icons + content hierarchy
@@ -423,10 +470,12 @@ interface MetricCardProps {
 ---
 
 ### 2.4 IndustryGrid Section
+
 **Час: 2 години**
 **Status:** ✅ COMPLETED
 
 **Компоненти:**
+
 - ✅ `IndustryGrid.tsx` - Section wrapper
 - ✅ `IndustryCard.tsx` - Industry card with hover arrow
 - ✅ Реюз `GlassTag` для tech badges
@@ -434,6 +483,7 @@ interface MetricCardProps {
 **Layout:** 3x2 grid (responsive: 3 → 2 → 1)
 
 **Card structure:**
+
 ```
 [Icon]
 Industry Name (+ project count)
@@ -443,9 +493,11 @@ Tech badges (limited to 3 + counter)
 ```
 
 **Data:**
+
 - `lib/data/industries.tsx` - 6 industries with icons and tech
 
 **✅ APPROVED:**
+
 - [x] Industry card hover with arrow reveal
 - [x] Icon treatment (gradient backgrounds)
 - [x] Grid spacing
@@ -455,16 +507,19 @@ Tech badges (limited to 3 + counter)
 ---
 
 ### 2.5 PortfolioShowcase Section
+
 **Час: 4 години**
 **Status:** ✅ COMPLETED
 
 **Компоненти:**
+
 - ✅ `PortfolioShowcase.tsx` - Section wrapper
 - ✅ `ProjectCard.tsx` ⚠️ ВАЖЛИВИЙ компонент!
 - ✅ Реюз `GlassTag` для tech stack
 - ✅ Реюз `LiquidGlassButton` (outline variant)
 
 **Card structure:**
+
 ```
 [Project Image - aspect ratio 16:9 with zoom hover]
 Project Name
@@ -474,11 +529,13 @@ Description
 ```
 
 **Data:**
+
 - `lib/data/projects.ts` - 8 projects з portfolio
 - Copied images from /Users/macbookpro/Desktop/work/MDVS/Portfolio
 - Helper functions: getFeaturedProjects(), getProjectsByCategory()
 
 **✅ APPROVED:**
+
 - [x] Project card design ⭐ КРИТИЧНИЙ
 - [x] Image treatment (hover zoom effect)
 - [x] Tag layout (tech stack badges)
@@ -491,10 +548,12 @@ Description
 ---
 
 ### 2.6 TechStack Section
+
 **Час: 2 години**
 **Status:** ✅ COMPLETED
 
 **Компоненти:**
+
 - ✅ `TechStack.tsx` - Section with categorized technologies
 - ✅ Реюз `GlassTag` (no new components needed!)
 
@@ -510,6 +569,7 @@ Design & Tools: [Figma] [Adobe XD] [Sketch] [Git]
 ```
 
 **✅ APPROVED:**
+
 - [x] Tech badge style (reused GlassTag)
 - [x] Categorization layout
 - [x] Section structure
@@ -518,10 +578,12 @@ Design & Tools: [Figma] [Adobe XD] [Sketch] [Git]
 ---
 
 ### 2.7 ProcessTimeline Section
+
 **Час: 3 години**
 **Status:** ✅ COMPLETED
 
 **Компоненти:**
+
 - ✅ `ProcessTimeline.tsx` - Section wrapper
 - ✅ `ProcessStep.tsx` - Individual timeline step
 - ✅ Реюз `GlassIcon` для step icons
@@ -529,6 +591,7 @@ Design & Tools: [Figma] [Adobe XD] [Sketch] [Git]
 **Layout:** Horizontal timeline (mobile: vertical)
 
 **Steps:**
+
 1. Discovery - Research and planning
 2. Design - UI/UX and architecture
 3. Development - Code implementation
@@ -536,6 +599,7 @@ Design & Tools: [Figma] [Adobe XD] [Sketch] [Git]
 5. Launch - Deployment and support
 
 **✅ APPROVED:**
+
 - [x] Timeline connector design (lines between steps)
 - [x] Step card design (number badge + icon + content)
 - [x] Icons treatment (using GlassIcon)
@@ -545,14 +609,17 @@ Design & Tools: [Figma] [Adobe XD] [Sketch] [Git]
 ---
 
 ### 2.8 TestimonialsCarousel Section
+
 **Час: 3 години**
 **Status:** ⏳ PENDING
 
 **Компоненти:**
+
 - Новий: `TestimonialCard.tsx` (based on GlassCard)
 - Carousel logic
 
 **Card structure:**
+
 ```
 [Client Photo/Logo]
 "Quote"
@@ -562,6 +629,7 @@ Design & Tools: [Figma] [Adobe XD] [Sketch] [Git]
 ```
 
 **✋ APPROVAL CHECKPOINT:**
+
 - [ ] Testimonial card design
 - [ ] Carousel controls
 - [ ] Auto-play behavior
@@ -570,16 +638,19 @@ Design & Tools: [Figma] [Adobe XD] [Sketch] [Git]
 ---
 
 ### 2.9 WhyChoose Section
+
 **Час: 2 години**
 **Status:** ✅ COMPLETED
 
 **Компоненти:**
+
 - ✅ `WhyChoose.tsx` - Section wrapper
 - ✅ `FeatureCard.tsx` - Simple benefit card (2 variants: default, compact)
 
 **Layout:** 3x2 grid (responsive: 3 → 2 → 1)
 
 **Benefits:**
+
 1. 11+ Years Experience
 2. Quality Assurance
 3. Expert Team (50+ developers)
@@ -588,6 +659,7 @@ Design & Tools: [Figma] [Adobe XD] [Sketch] [Git]
 6. Long-term Partnership
 
 **✅ APPROVED:**
+
 - [x] Feature card design (icon + title gradient + description)
 - [x] Icon + text layout
 - [x] Grid spacing
@@ -598,19 +670,23 @@ Design & Tools: [Figma] [Adobe XD] [Sketch] [Git]
 ---
 
 ### 2.10 CTASection (Final)
+
 **Час: 1 година**
 **Status:** ✅ COMPLETED
 
 **Компоненти:**
+
 - ✅ Реюз `LiquidGlassButton` (primary variant)
 - Simple centered layout
 
 **Simple centered CTA block:**
+
 - Heading: "Ready to Build Something Great?"
 - Description: "Let's discuss how we can help bring your vision to life"
 - CTA Button: "Get In Touch"
 
 **✅ APPROVED:**
+
 - [x] CTA section contrast
 - [x] Button hierarchy
 - [x] Simple centered layout
@@ -624,16 +700,19 @@ Design & Tools: [Figma] [Adobe XD] [Sketch] [Git]
 ### 3.1 Staff Augmentation Page
 
 **Використовуємо БЕЗ змін:**
+
 - ✅ `PageHeader`
 - ✅ `ProcessTimeline` (адаптуємо контент)
 - ✅ `MetricCard`
 - ✅ `GlassCard` для секцій
 
 **Нові компоненти:**
+
 - `DeveloperProfileCard.tsx` (based on ProjectCard pattern)
 - `PricingTable.tsx`
 
 **✋ APPROVAL CHECKPOINTS:**
+
 - [ ] Developer profile card
 - [ ] Pricing table design
 - [ ] Page layout consistency
@@ -643,15 +722,18 @@ Design & Tools: [Figma] [Adobe XD] [Sketch] [Git]
 ### 3.2 Custom Development Page
 
 **Використовуємо БЕЗ змін:**
+
 - ✅ `PageHeader`
 - ✅ `ServiceCard` (з Homepage)
 - ✅ `ProjectCard` (filtered portfolio)
 - ✅ `TechBadge`
 
 **Нові компоненти:**
+
 - `EngagementModelCard.tsx` (варіант ServiceCard)
 
 **✋ APPROVAL CHECKPOINT:**
+
 - [ ] Engagement model cards
 - [ ] Overall consistency з homepage
 
@@ -660,15 +742,18 @@ Design & Tools: [Figma] [Adobe XD] [Sketch] [Git]
 ### 3.3 UI/UX Design Page
 
 **Використовуємо БЕЗ змін:**
+
 - ✅ `PageHeader`
 - ✅ `ProcessTimeline` (design process)
 - ✅ `ProjectCard` (design portfolio)
 - ✅ Team member cards
 
 **Нові компоненти:**
+
 - Можливо `ToolCard.tsx` для design tools
 
 **✋ APPROVAL CHECKPOINT:**
+
 - [ ] Design portfolio presentation
 - [ ] Process visualization
 
@@ -679,15 +764,18 @@ Design & Tools: [Figma] [Adobe XD] [Sketch] [Git]
 ### Strategy: Єдиний Template для всіх tech pages
 
 **Створюємо:**
+
 - `TechPageTemplate.tsx` + MDX/JSON data
 
 **Використовуємо:**
+
 - ✅ `PageHeader`
 - ✅ `ProjectCard` (filtered по tech)
 - ✅ `TechBadge`
 - ✅ `FeatureCard`
 
 **Data-driven approach:**
+
 ```typescript
 // lib/data/technologies.ts
 export const technologies = {
@@ -703,6 +791,7 @@ export const technologies = {
 ```
 
 **✋ APPROVAL CHECKPOINT:**
+
 - [ ] Template design
 - [ ] Data structure
 - [ ] Одна tech page як приклад
@@ -716,15 +805,18 @@ export const technologies = {
 ### Strategy: Той самий підхід - Template
 
 **Створюємо:**
+
 - `IndustryPageTemplate.tsx` + data
 
 **Використовуємо:**
+
 - ✅ `PageHeader`
 - ✅ `ProjectCard` (filtered)
 - ✅ `FeatureCard`
 - ✅ `IndustryCard`
 
 **✋ APPROVAL CHECKPOINT:**
+
 - [ ] Industry template
 - [ ] Одна industry page як приклад
 
@@ -735,16 +827,19 @@ export const technologies = {
 ### 6.1 Portfolio Grid Page
 
 **Використовуємо:**
+
 - ✅ `ProjectCard` (той самий з Homepage!)
 - Новий: `FilterBar.tsx`
 
 **Features:**
+
 - Filter by industry
 - Filter by tech
 - Sort options
 - Search (optional)
 
 **✋ APPROVAL CHECKPOINT:**
+
 - [ ] Filter bar design
 - [ ] Grid layout
 - [ ] Filter interactions
@@ -754,12 +849,14 @@ export const technologies = {
 ### 6.2 Project Detail Page Template
 
 **Використовуємо:**
+
 - ✅ `PageHeader` (з breadcrumbs)
 - ✅ `TechBadge`
 - ✅ `GlassCard` для секцій
 - Новий: `ImageGallery.tsx`
 
 **Sections:**
+
 1. Hero (screenshot)
 2. Overview
 3. Challenge
@@ -769,6 +866,7 @@ export const technologies = {
 7. Navigation (next/prev project)
 
 **✋ APPROVAL CHECKPOINT:**
+
 - [ ] Project detail layout
 - [ ] Image gallery treatment
 - [ ] Results presentation
@@ -779,12 +877,14 @@ export const technologies = {
 ## 🔷 ФАЗА 7: About & Team (Тиждень 5)
 
 **Використовуємо:**
+
 - ✅ `PageHeader`
 - ✅ `GlassCard`
 - ✅ `MetricCard`
 - Новий: `TeamMemberCard.tsx`
 
 **✋ APPROVAL CHECKPOINT:**
+
 - [ ] Team member card
 - [ ] About page layout
 - [ ] Photo treatment
@@ -794,11 +894,13 @@ export const technologies = {
 ## 🔷 ФАЗА 8: Blog/Insights (Тиждень 6)
 
 **Використовуємо:**
+
 - ✅ `PageHeader`
 - Новий: `ArticleCard.tsx` (based on ProjectCard)
 - Новий: `ArticleTemplate.tsx`
 
 **✋ APPROVAL CHECKPOINT:**
+
 - [ ] Article card
 - [ ] Article detail page
 - [ ] Blog grid layout
@@ -810,6 +912,7 @@ export const technologies = {
 ### 9.1 Cost Calculator
 
 **Компоненти:**
+
 - ✅ `GlassCard`
 - ✅ `GlassInput`
 - ✅ `GlassButton`
@@ -817,6 +920,7 @@ export const technologies = {
 - Новий: `RadioGroup.tsx` (glass styled)
 
 **✋ APPROVAL CHECKPOINT:**
+
 - [ ] Calculator UI
 - [ ] Form controls styling
 - [ ] Results presentation
@@ -826,12 +930,14 @@ export const technologies = {
 ### 9.2 AI Advisor Widget
 
 **Компоненти:**
+
 - Новий: `ChatWidget.tsx`
 - Новий: `ChatMessage.tsx`
 - ✅ `GlassButton`
 - ✅ `GlassInput`
 
 **✋ APPROVAL CHECKPOINT:**
+
 - [ ] Widget closed state (floating button)
 - [ ] Widget open state (chat window)
 - [ ] Message bubbles
@@ -842,6 +948,7 @@ export const technologies = {
 ### 9.3 Contact Form
 
 **Використовуємо:**
+
 - ✅ `GlassInput`
 - ✅ `GlassButton`
 - ✅ `GlassCard`
@@ -849,6 +956,7 @@ export const technologies = {
 **No new components needed!**
 
 **✋ APPROVAL CHECKPOINT:**
+
 - [ ] Form layout
 - [ ] Validation states
 
@@ -881,6 +989,7 @@ export const technologies = {
 - [ ] Performance testing
 
 **✋ FINAL APPROVAL:**
+
 - [ ] Full site walkthrough
 - [ ] All pages reviewed
 - [ ] Mobile experience
@@ -902,18 +1011,18 @@ export const technologies = {
 
 **Мета: Максимізувати реюз, мінімізувати нові компоненти**
 
-| Компонент | Використання (к-сть місць) | Priority |
-|-----------|---------------------------|----------|
-| GlassCard | 50+ | ⭐⭐⭐⭐⭐ |
-| GlassButton | 30+ | ⭐⭐⭐⭐⭐ |
-| GlassInput | 10+ | ⭐⭐⭐⭐ |
-| GlassTag | 20+ | ⭐⭐⭐⭐ |
-| ProjectCard | 15+ | ⭐⭐⭐⭐⭐ |
-| PageHeader | 15+ | ⭐⭐⭐⭐⭐ |
-| Navigation | 1 (global) | ⭐⭐⭐⭐⭐ |
-| Footer | 1 (global) | ⭐⭐⭐⭐⭐ |
-| MetricCard | 10+ | ⭐⭐⭐ |
-| ServiceCard | 5+ | ⭐⭐⭐ |
+| Компонент   | Використання (к-сть місць) | Priority   |
+| ----------- | -------------------------- | ---------- |
+| GlassCard   | 50+                        | ⭐⭐⭐⭐⭐ |
+| GlassButton | 30+                        | ⭐⭐⭐⭐⭐ |
+| GlassInput  | 10+                        | ⭐⭐⭐⭐   |
+| GlassTag    | 20+                        | ⭐⭐⭐⭐   |
+| ProjectCard | 15+                        | ⭐⭐⭐⭐⭐ |
+| PageHeader  | 15+                        | ⭐⭐⭐⭐⭐ |
+| Navigation  | 1 (global)                 | ⭐⭐⭐⭐⭐ |
+| Footer      | 1 (global)                 | ⭐⭐⭐⭐⭐ |
+| MetricCard  | 10+                        | ⭐⭐⭐     |
+| ServiceCard | 5+                         | ⭐⭐⭐     |
 
 ---
 
@@ -922,6 +1031,7 @@ export const technologies = {
 ### Перед кожним approval:
 
 **Desktop:**
+
 - [ ] Visual design відповідає Liquid Glass системі
 - [ ] Yellow accent використовується правильно
 - [ ] Hover states працюють
@@ -930,17 +1040,20 @@ export const technologies = {
 - [ ] Typography hierarchy
 
 **Mobile:**
+
 - [ ] Responsive layout
 - [ ] Touch targets достатні (44x44px min)
 - [ ] Text readable
 - [ ] Images адаптовані
 
 **Accessibility:**
+
 - [ ] Contrast ratio достатній
 - [ ] Keyboard navigation працює
 - [ ] Screen reader friendly
 
 **Performance:**
+
 - [ ] No layout shift
 - [ ] Smooth animations
 - [ ] Images optimized
@@ -952,12 +1065,14 @@ export const technologies = {
 ### Коли створювати новий компонент?
 
 **✅ ТАК, створюй новий, якщо:**
+
 1. Немає схожого існуючого
 2. Логіка принципово інша
 3. Буде реюзатись 3+ рази
 4. Покращує архітектуру
 
 **❌ НІ, НЕ створюй, якщо:**
+
 1. Можна розширити існуючий через props
 2. Відрізняється тільки контентом
 3. Використається тільки 1 раз
@@ -968,6 +1083,7 @@ export const technologies = {
 ## 📦 DELIVERABLES ПО ФАЗАХ
 
 ### Фаза 1: ✅ COMPLETED
+
 - [x] 5 базових atoms (GlassCard, LiquidGlassButton, GlassInput, GlassTag, GlassIcon)
 - [x] 3 layout components (Header, Footer, PageHeader)
 - [x] 1 molecule (MetricCard)
@@ -975,6 +1091,7 @@ export const technologies = {
 - [x] Test page створена (/test-phase1)
 
 ### Фаза 2: ✅ COMPLETED
+
 - [x] Homepage з 9 основними sections (Hero, MetricsBar, ServiceTabs, PortfolioShowcase, IndustryGrid, ProcessTimeline, TechStack, WhyChoose, CTA)
 - [x] 6 нових section components (ServiceCard, ServiceTabs, ProjectCard, PortfolioShowcase, IndustryCard, IndustryGrid, ProcessStep, ProcessTimeline, TechStack, FeatureCard, WhyChoose)
 - [x] 2 data structures (services.tsx, projects.ts, industries.tsx)
@@ -984,30 +1101,36 @@ export const technologies = {
 - [ ] TestimonialsCarousel (optional - можна додати пізніше)
 
 ### Фаза 3:
+
 - [ ] 3 service pages
 - [ ] 3 нових компоненти
 
 ### Фаза 4-5:
+
 - [ ] 2 templates
 - [ ] Data structure
 - [ ] 10+ auto-generated pages
 
 ### Фаза 6:
+
 - [ ] Portfolio grid
 - [ ] Project detail template
 - [ ] 6+ project pages
 
 ### Фаза 7-8:
+
 - [ ] About page
 - [ ] Team page
 - [ ] Blog structure
 
 ### Фаза 9:
+
 - [ ] Calculator
 - [ ] AI Widget
 - [ ] Contact form
 
 ### Фаза 10-12:
+
 - [ ] Production-ready site
 - [ ] SEO optimized
 - [ ] Performance optimized
@@ -1018,18 +1141,18 @@ export const technologies = {
 
 **Total: 9-10 тижнів**
 
-| Фаза | Час | Approval Points |
-|------|-----|-----------------|
-| 1 | 1 тиждень | 7 checkpoints |
-| 2 | 1 тиждень | 10 checkpoints |
-| 3 | 1 тиждень | 3 checkpoints |
-| 4 | 0.5 тижня | 1 checkpoint |
-| 5 | 0.5 тижня | 1 checkpoint |
-| 6 | 1 тиждень | 2 checkpoints |
-| 7-8 | 1 тиждень | 3 checkpoints |
-| 9 | 1 тиждень | 3 checkpoints |
-| 10 | 1 тиждень | - |
-| 11-12 | 2 тижні | 1 final |
+| Фаза  | Час       | Approval Points |
+| ----- | --------- | --------------- |
+| 1     | 1 тиждень | 7 checkpoints   |
+| 2     | 1 тиждень | 10 checkpoints  |
+| 3     | 1 тиждень | 3 checkpoints   |
+| 4     | 0.5 тижня | 1 checkpoint    |
+| 5     | 0.5 тижня | 1 checkpoint    |
+| 6     | 1 тиждень | 2 checkpoints   |
+| 7-8   | 1 тиждень | 3 checkpoints   |
+| 9     | 1 тиждень | 3 checkpoints   |
+| 10    | 1 тиждень | -               |
+| 11-12 | 2 тижні   | 1 final         |
 
 **Total Approval Checkpoints: ~30**
 
@@ -1040,15 +1163,14 @@ export const technologies = {
 **Всі компоненти МУСЯТЬ використовувати:**
 
 ### Colors:
+
 ```css
---brand-yellow: #F4D03F
---brand-yellow-light: #F9E79F
---brand-yellow-dark: #D4A017
---brand-black: #1a1a1a
---brand-white: #ffffff
+--brand-yellow: #f4d03f --brand-yellow-light: #f9e79f --brand-yellow-dark: #d4a017
+  --brand-black: #1a1a1a --brand-white: #ffffff;
 ```
 
 ### Glass Effects:
+
 ```css
 --glass-bg
 --glass-overlay
@@ -1058,18 +1180,14 @@ export const technologies = {
 ```
 
 ### Spacing:
+
 ```css
---spacing-xs: 4px
---spacing-sm: 8px
---spacing-md: 16px
---spacing-lg: 24px
---spacing-xl: 32px
---spacing-2xl: 48px
---spacing-3xl: 64px
---spacing-4xl: 96px
+--spacing-xs: 4px --spacing-sm: 8px --spacing-md: 16px --spacing-lg: 24px --spacing-xl: 32px
+  --spacing-2xl: 48px --spacing-3xl: 64px --spacing-4xl: 96px;
 ```
 
 ### Typography:
+
 ```css
 --font-size-xs through --font-size-6xl
 --font-weight-normal through --font-weight-bold
@@ -1087,34 +1205,41 @@ export const technologies = {
 # ComponentName
 
 ## Usage
+
 \`\`\`tsx
 <ComponentName variant="primary" size="large">
-  Content
+Content
 </ComponentName>
 \`\`\`
 
 ## Props
+
 | Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| ... | ... | ... | ... |
+| ---- | ---- | ------- | ----------- |
+| ...  | ...  | ...     | ...         |
 
 ## Variants
+
 - variant="primary" - Yellow gradient
 - variant="secondary" - Dark with border
 
 ## Examples
+
 [Screenshots з UI review]
 
 ## Used In
+
 - Homepage: Hero section
 - Services: CTA blocks
 - Contact: Form submit
 
 ## Dependencies
+
 - GlassCard
 - Icon
 
 ## Notes
+
 - Uses --brand-yellow
 - Reused 15+ times across site
 ```
@@ -1124,18 +1249,21 @@ export const technologies = {
 ## 🎯 SUCCESS METRICS
 
 ### Code Quality:
+
 - [ ] Component reuse rate > 80%
 - [ ] New components < 30 total
 - [ ] CSS duplication < 5%
 - [ ] Type safety 100%
 
 ### Design Consistency:
+
 - [ ] All glass effects use system classes
 - [ ] All colors from design tokens
 - [ ] All spacing from system
 - [ ] Visual consistency score > 95%
 
 ### Performance:
+
 - [ ] Lighthouse score > 90
 - [ ] First Contentful Paint < 1.5s
 - [ ] Time to Interactive < 3s
@@ -1148,6 +1276,7 @@ export const technologies = {
 ### Створення ProjectCard компонента:
 
 **День 1 (2 години):**
+
 1. Аналіз: чи є схожі компоненти? (GlassCard ✅)
 2. Design в коді базуючись на GlassCard
 3. Імплементація Props interface
@@ -1156,6 +1285,7 @@ export const technologies = {
 6. Mobile responsive
 
 **✋ ЗУПИНКА - готую UI review:**
+
 - Screenshots всіх variants
 - Hover state demo
 - Mobile screenshots
@@ -1164,6 +1294,7 @@ export const technologies = {
 **Чекаю approval...**
 
 **День 2 (1 година) - після approval ✅:**
+
 1. Фіксы з review (якщо є)
 2. Документація
 3. Використання в Homepage
@@ -1171,6 +1302,7 @@ export const technologies = {
 5. Commit з описом
 
 **День 3+:**
+
 - Реюз ProjectCard на інших сторінках БЕЗ змін
 - Якщо потрібні зміни → обговорюємо extend vs new component
 
@@ -1179,6 +1311,7 @@ export const technologies = {
 ## 🚀 READY TO START?
 
 ### Перший крок:
+
 1. Review цього плану
 2. Approve структуру
 3. Починаємо з Component 1.2.1: GlassButton

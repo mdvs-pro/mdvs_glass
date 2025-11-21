@@ -1,4 +1,3 @@
-import { ReactNode } from 'react'
 import Image from 'next/image'
 import GlassTag from '@/components/glass/GlassTag'
 import LiquidGlassButton from '@/components/glass/LiquidGlassButton'
@@ -20,20 +19,14 @@ export default function ProjectCard({
   image,
   tech,
   url,
-  category,
+  category: _category,
   variant = 'grid',
 }: ProjectCardProps) {
   return (
     <div className={`${styles.projectCard} ${variant === 'featured' ? styles.featured : ''}`}>
       {/* Project Image */}
       <div className={styles.imageWrapper}>
-        <Image
-          src={image}
-          alt={title}
-          width={600}
-          height={400}
-          className={styles.projectImage}
-        />
+        <Image src={image} alt={title} width={600} height={400} className={styles.projectImage} />
         <div className={styles.imageOverlay}></div>
       </div>
 
@@ -54,12 +47,7 @@ export default function ProjectCard({
 
         {/* CTA Button */}
         <div className={styles.ctaWrapper}>
-          <LiquidGlassButton
-            href={url}
-            variant="outline"
-            size="small"
-            fullWidth
-          >
+          <LiquidGlassButton href={url} variant="outline" size="small" fullWidth>
             View Project →
           </LiquidGlassButton>
         </div>

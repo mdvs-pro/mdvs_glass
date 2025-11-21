@@ -33,7 +33,8 @@ export default function MetricCard({
   animationDuration = 2000,
 }: MetricCardProps) {
   const [displayValue, setDisplayValue] = useState(0)
-  const numericValue = typeof value === 'number' ? value : parseInt(value.toString().replace(/\D/g, ''), 10)
+  const numericValue =
+    typeof value === 'number' ? value : parseInt(value.toString().replace(/\D/g, ''), 10)
 
   useEffect(() => {
     if (!animated || isNaN(numericValue)) return
@@ -55,9 +56,8 @@ export default function MetricCard({
     requestAnimationFrame(animate)
   }, [animated, numericValue, animationDuration])
 
-  const formattedValue = animated && !isNaN(numericValue)
-    ? displayValue.toString()
-    : value.toString()
+  const formattedValue =
+    animated && !isNaN(numericValue) ? displayValue.toString() : value.toString()
 
   return (
     <div className={styles.metricCard}>

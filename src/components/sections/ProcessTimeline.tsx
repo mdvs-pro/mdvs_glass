@@ -1,11 +1,5 @@
 import ProcessStep from './ProcessStep'
-import {
-  FaLightbulb,
-  FaPalette,
-  FaCode,
-  FaCheckCircle,
-  FaRocket,
-} from 'react-icons/fa'
+import { FaLightbulb, FaPalette, FaCode, FaCheckCircle, FaRocket } from 'react-icons/fa'
 import styles from './ProcessTimeline.module.css'
 
 export interface ProcessTimelineProps {

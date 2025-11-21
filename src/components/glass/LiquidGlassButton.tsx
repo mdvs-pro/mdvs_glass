@@ -24,6 +24,7 @@ interface LiquidGlassButtonProps {
   loading?: boolean
   icon?: ReactNode
   iconPosition?: 'left' | 'right'
+  type?: 'button' | 'submit' | 'reset'
 }
 
 export default function LiquidGlassButton({
@@ -38,6 +39,7 @@ export default function LiquidGlassButton({
   loading = false,
   icon,
   iconPosition = 'left',
+  type = 'button',
 }: LiquidGlassButtonProps) {
   const Component = href ? 'a' : 'button'
 
@@ -77,10 +79,8 @@ export default function LiquidGlassButton({
       className={classNames}
       href={!disabled && !loading ? href : undefined}
       onClick={handleClick}
-      {...(href && !disabled && !loading
-        ? { target: '_blank', rel: 'noopener noreferrer' }
-        : {})}
-      {...(Component === 'button' ? { type: 'button', disabled: disabled || loading } : {})}
+      {...(href && !disabled && !loading ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      {...(Component === 'button' ? { type, disabled: disabled || loading } : {})}
     >
       {/* Complex liquid glass layers only for primary variant */}
       {variant === 'primary' && (
@@ -102,19 +102,13 @@ export default function LiquidGlassButton({
       )}
 
       {/* Simple tint layer for secondary only */}
-      {variant === 'secondary' && (
-        <div className={styles.liquidGlassTint}></div>
-      )}
+      {variant === 'secondary' && <div className={styles.liquidGlassTint}></div>}
 
       {/* Outline is minimal - just border + text, no layers */}
 
       <div className={styles.liquidGlassText}>
-        {loading && (
-          <span className={styles.spinner} aria-label="Loading"></span>
-        )}
-        {!loading && icon && iconPosition === 'left' && (
-          <span className={styles.icon}>{icon}</span>
-        )}
+        {loading && <span className={styles.spinner} aria-label="Loading"></span>}
+        {!loading && icon && iconPosition === 'left' && <span className={styles.icon}>{icon}</span>}
         <span>{children}</span>
         {!loading && icon && iconPosition === 'right' && (
           <span className={styles.icon}>{icon}</span>

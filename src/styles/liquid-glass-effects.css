@@ -168,7 +168,8 @@
 
 /* Float Animation */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) translate(0) scale(1);
   }
   25% {
@@ -184,7 +185,8 @@
 
 /* Liquid Flow - Morphing and moving */
 @keyframes liquidFlow {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) translate(0) scale(1) rotate(0deg);
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
@@ -220,7 +222,8 @@
 
 /* Liquid Circle Float Variants */
 @keyframes liquidCircleFloat1 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) translate(0) scale(1);
     opacity: 0.15;
   }
@@ -239,7 +242,8 @@
 }
 
 @keyframes liquidCircleFloat2 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) translate(0) scale(1) rotate(0deg);
     opacity: 0.2;
   }
@@ -254,7 +258,8 @@
 }
 
 @keyframes liquidCircleFloat3 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) translate(0) scale(1);
     opacity: 0.18;
   }
@@ -269,7 +274,8 @@
 }
 
 @keyframes liquidCircleFloat4 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) translate(0) scale(1) rotate(0deg);
     opacity: 0.16;
   }
@@ -293,7 +299,8 @@
 
 /* Pulse Animation */
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.2;
   }
   50% {
@@ -330,7 +337,8 @@
 }
 
 @keyframes backgroundFloat {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 0%;
   }
   25% {

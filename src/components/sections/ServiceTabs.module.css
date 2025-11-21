@@ -74,11 +74,7 @@
 }
 
 .tabButton.active {
-  background: linear-gradient(
-    135deg,
-    rgba(244, 208, 63, 0.15),
-    rgba(244, 208, 63, 0.08)
-  );
+  background: linear-gradient(135deg, rgba(244, 208, 63, 0.15), rgba(244, 208, 63, 0.08));
   color: var(--brand-yellow);
 }
 

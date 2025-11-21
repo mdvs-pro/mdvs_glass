@@ -73,16 +73,16 @@
   /* ============================================
      MDVS BRAND COLORS (from logo)
      ============================================ */
-  --brand-yellow: #F4D03F;
-  --brand-yellow-light: #F9E79F;
-  --brand-yellow-dark: #D4A017;
+  --brand-yellow: #f4d03f;
+  --brand-yellow-light: #f9e79f;
+  --brand-yellow-dark: #d4a017;
   --brand-black: #1a1a1a;
   --brand-white: #ffffff;
 
   /* Secondary Color - Purple accent for secondary variants */
-  --color-secondary: #9B59B6;
-  --color-secondary-light: #BB8FCE;
-  --color-secondary-dark: #7D3C98;
+  --color-secondary: #9b59b6;
+  --color-secondary-light: #bb8fce;
+  --color-secondary-dark: #7d3c98;
   --color-secondary-rgb: 155, 89, 182;
 
   /* ============================================

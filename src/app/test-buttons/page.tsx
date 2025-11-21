@@ -8,9 +8,7 @@ export default function TestButtonsPage() {
     <div className={styles.testPage}>
       <div className={styles.container}>
         <h1 className={styles.title}>LiquidGlassButton - All Variants</h1>
-        <p className={styles.subtitle}>
-          Testing all button variants, sizes, and states
-        </p>
+        <p className={styles.subtitle}>Testing all button variants, sizes, and states</p>
 
         {/* VARIANTS Section */}
         <section className={styles.section}>
@@ -23,7 +21,7 @@ export default function TestButtonsPage() {
               >
                 Primary Button
               </LiquidGlassButton>
-              <span className={styles.label}>variant="primary"</span>
+              <span className={styles.label}>variant=&quot;primary&quot;</span>
             </div>
 
             <div className={styles.buttonDemo}>
@@ -33,7 +31,7 @@ export default function TestButtonsPage() {
               >
                 Secondary Button
               </LiquidGlassButton>
-              <span className={styles.label}>variant="secondary"</span>
+              <span className={styles.label}>variant=&quot;secondary&quot;</span>
             </div>
 
             <div className={styles.buttonDemo}>
@@ -43,7 +41,7 @@ export default function TestButtonsPage() {
               >
                 Outline Button
               </LiquidGlassButton>
-              <span className={styles.label}>variant="outline"</span>
+              <span className={styles.label}>variant=&quot;outline&quot;</span>
             </div>
           </div>
         </section>
@@ -60,7 +58,7 @@ export default function TestButtonsPage() {
               >
                 Small Button
               </LiquidGlassButton>
-              <span className={styles.label}>size="small"</span>
+              <span className={styles.label}>size=&quot;small&quot;</span>
             </div>
 
             <div className={styles.buttonDemo}>
@@ -71,7 +69,7 @@ export default function TestButtonsPage() {
               >
                 Medium Button
               </LiquidGlassButton>
-              <span className={styles.label}>size="medium" (default)</span>
+              <span className={styles.label}>size=&quot;medium&quot; (default)</span>
             </div>
 
             <div className={styles.buttonDemo}>
@@ -82,7 +80,7 @@ export default function TestButtonsPage() {
               >
                 Large Button
               </LiquidGlassButton>
-              <span className={styles.label}>size="large"</span>
+              <span className={styles.label}>size=&quot;large&quot;</span>
             </div>
           </div>
         </section>
@@ -418,30 +416,63 @@ export default function TestButtonsPage() {
           <div className={styles.notes}>
             <h3>Variants:</h3>
             <ul>
-              <li><strong>Primary:</strong> Yellow gradient - main CTAs, important actions</li>
-              <li><strong>Secondary:</strong> Dark with yellow border - secondary actions</li>
-              <li><strong>Outline:</strong> Transparent with border - tertiary actions, navigation</li>
+              <li>
+                <strong>Primary:</strong> Yellow gradient - main CTAs, important actions
+              </li>
+              <li>
+                <strong>Secondary:</strong> Dark with yellow border - secondary actions
+              </li>
+              <li>
+                <strong>Outline:</strong> Transparent with border - tertiary actions, navigation
+              </li>
             </ul>
 
             <h3>Sizes:</h3>
             <ul>
-              <li><strong>Small:</strong> Navigation, inline actions</li>
-              <li><strong>Medium:</strong> Forms, standard CTAs (default)</li>
-              <li><strong>Large:</strong> Hero sections, prominent CTAs</li>
+              <li>
+                <strong>Small:</strong> Navigation, inline actions
+              </li>
+              <li>
+                <strong>Medium:</strong> Forms, standard CTAs (default)
+              </li>
+              <li>
+                <strong>Large:</strong> Hero sections, prominent CTAs
+              </li>
             </ul>
 
             <h3>Props Available:</h3>
             <ul>
-              <li><code>variant</code>: "primary" | "secondary" | "outline"</li>
-              <li><code>size</code>: "small" | "medium" | "large"</li>
-              <li><code>disabled</code>: boolean</li>
-              <li><code>loading</code>: boolean</li>
-              <li><code>fullWidth</code>: boolean</li>
-              <li><code>icon</code>: ReactNode</li>
-              <li><code>iconPosition</code>: "left" | "right"</li>
-              <li><code>backgroundImage</code>: string (url)</li>
-              <li><code>onClick</code>: function</li>
-              <li><code>href</code>: string (renders as &lt;a&gt;)</li>
+              <li>
+                <code>variant</code>: &quot;primary&quot; | &quot;secondary&quot; |
+                &quot;outline&quot;
+              </li>
+              <li>
+                <code>size</code>: &quot;small&quot; | &quot;medium&quot; | &quot;large&quot;
+              </li>
+              <li>
+                <code>disabled</code>: boolean
+              </li>
+              <li>
+                <code>loading</code>: boolean
+              </li>
+              <li>
+                <code>fullWidth</code>: boolean
+              </li>
+              <li>
+                <code>icon</code>: ReactNode
+              </li>
+              <li>
+                <code>iconPosition</code>: &quot;left&quot; | &quot;right&quot;
+              </li>
+              <li>
+                <code>backgroundImage</code>: string (url)
+              </li>
+              <li>
+                <code>onClick</code>: function
+              </li>
+              <li>
+                <code>href</code>: string (renders as &lt;a&gt;)
+              </li>
             </ul>
           </div>
         </section>

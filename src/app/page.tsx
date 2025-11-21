@@ -20,8 +20,7 @@ export default function HomePage() {
         <div className="container">
           <div className={styles.heroContent}>
             <h1 className="heading-hero">
-              Transform Ideas Into{' '}
-              <span className={styles.heroAccent}>Digital Reality</span>
+              Transform Ideas Into <span className={styles.heroAccent}>Digital Reality</span>
             </h1>
             <p className="text-lead text-gray" style={{ maxWidth: '600px', margin: '0 auto' }}>
               Elite software development and IT solutions with 11 years of proven expertise
@@ -42,30 +41,10 @@ export default function HomePage() {
       <section className={styles.metricsBar}>
         <div className="container">
           <div className={styles.metricsGrid}>
-            <MetricCard
-              icon={<FaRocket />}
-              value="11+"
-              label="Years of Expertise"
-              animated
-            />
-            <MetricCard
-              icon={<FaBriefcase />}
-              value="100+"
-              label="Projects Delivered"
-              animated
-            />
-            <MetricCard
-              icon={<FaUsers />}
-              value="50+"
-              label="Expert Developers"
-              animated
-            />
-            <MetricCard
-              icon={<FaStar />}
-              value="98%"
-              label="Client Satisfaction"
-              animated
-            />
+            <MetricCard icon={<FaRocket />} value="11+" label="Years of Expertise" animated />
+            <MetricCard icon={<FaBriefcase />} value="100+" label="Projects Delivered" animated />
+            <MetricCard icon={<FaUsers />} value="50+" label="Expert Developers" animated />
+            <MetricCard icon={<FaStar />} value="98%" label="Client Satisfaction" animated />
           </div>
         </div>
       </section>
@@ -115,7 +94,7 @@ export default function HomePage() {
           <div className={styles.ctaContent}>
             <h2>Ready to Build Something Great?</h2>
             <p className={styles.ctaDescription}>
-              Let's discuss how we can help bring your vision to life
+              Let&apos;s discuss how we can help bring your vision to life
             </p>
             <LiquidGlassButton
               href="/contact"

@@ -14,7 +14,8 @@ import styles from './GlassInput.module.css'
  * />
  */
 
-interface GlassInputProps extends Omit<InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>, 'size'> {
+interface GlassInputProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>, 'size'> {
   label?: string
   error?: string
   helperText?: string
@@ -75,19 +76,11 @@ export default function GlassInput({
         <div className={styles.glassShine}></div>
 
         <div className={styles.inputContent}>
-          {icon && iconPosition === 'left' && (
-            <span className={styles.icon}>{icon}</span>
-          )}
+          {icon && iconPosition === 'left' && <span className={styles.icon}>{icon}</span>}
 
-          <Component
-            className={styles.input}
-            {...(multiline ? { rows } : {})}
-            {...inputProps}
-          />
+          <Component className={styles.input} {...(multiline ? { rows } : {})} {...inputProps} />
 
-          {icon && iconPosition === 'right' && (
-            <span className={styles.icon}>{icon}</span>
-          )}
+          {icon && iconPosition === 'right' && <span className={styles.icon}>{icon}</span>}
         </div>
       </div>
 

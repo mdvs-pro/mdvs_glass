@@ -22,8 +22,8 @@ export default function ServiceCard({
   description,
   features,
   cta,
-  variant = 'default',
-  backgroundImage,
+  variant: _variant = 'default',
+  backgroundImage: _backgroundImage,
 }: ServiceCardProps) {
   return (
     <div className={styles.serviceCard}>
@@ -45,12 +45,7 @@ export default function ServiceCard({
       </ul>
 
       <div className={styles.ctaWrapper}>
-        <LiquidGlassButton
-          href={cta.href}
-          variant="outline"
-          size="medium"
-          fullWidth
-        >
+        <LiquidGlassButton href={cta.href} variant="outline" size="medium" fullWidth>
           {cta.text}
         </LiquidGlassButton>
       </div>

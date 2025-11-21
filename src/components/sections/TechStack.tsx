@@ -55,11 +55,11 @@ export default function TechStack({
 
         {/* Tech Categories Grid */}
         <div className={styles.categoriesGrid}>
-          {techCategories.map((item) => (
+          {techCategories.map(item => (
             <div key={item.category} className={styles.categoryBlock}>
               <h3 className={styles.categoryTitle}>{item.category}</h3>
               <div className={styles.techList}>
-                {item.technologies.map((tech) => (
+                {item.technologies.map(tech => (
                   <GlassTag key={tech} variant="tech" size="small">
                     {tech}
                   </GlassTag>

@@ -31,7 +31,7 @@ export default function IndustryGrid({
 
         {/* Industries Grid */}
         <div className={styles.grid}>
-          {industries.map((industry) => (
+          {industries.map(industry => (
             <IndustryCard
               key={industry.id}
               icon={industry.icon}

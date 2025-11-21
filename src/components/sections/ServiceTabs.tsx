@@ -19,7 +19,7 @@ export interface ServiceTabsProps {
 export default function ServiceTabs({ tabs, sectionTitle, sectionSubtitle }: ServiceTabsProps) {
   const [activeTab, setActiveTab] = useState(tabs[0]?.id || '')
 
-  const activeTabData = tabs.find((tab) => tab.id === activeTab)
+  const activeTabData = tabs.find(tab => tab.id === activeTab)
 
   return (
     <section className={styles.serviceTabs}>
@@ -39,7 +39,7 @@ export default function ServiceTabs({ tabs, sectionTitle, sectionSubtitle }: Ser
 
         {/* Tab Buttons */}
         <div className={styles.tabButtons}>
-          {tabs.map((tab) => (
+          {tabs.map(tab => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
@@ -54,11 +54,7 @@ export default function ServiceTabs({ tabs, sectionTitle, sectionSubtitle }: Ser
         {/* Service Cards Grid */}
         <div className={styles.servicesGrid}>
           {activeTabData?.services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              {...service}
-              variant="default"
-            />
+            <ServiceCard key={index} {...service} variant="default" />
           ))}
         </div>
       </div>

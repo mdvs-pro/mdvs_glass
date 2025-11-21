@@ -1,12 +1,5 @@
 import FeatureCard from './FeatureCard'
-import {
-  FaClock,
-  FaShieldAlt,
-  FaUsers,
-  FaAward,
-  FaCog,
-  FaHandshake,
-} from 'react-icons/fa'
+import { FaClock, FaShieldAlt, FaUsers, FaAward, FaCog, FaHandshake } from 'react-icons/fa'
 import styles from './WhyChoose.module.css'
 
 export interface WhyChooseProps {
@@ -18,27 +11,32 @@ const features = [
   {
     icon: <FaClock />,
     title: '11+ Years Experience',
-    description: 'Over a decade of delivering successful projects across diverse industries and technologies.',
+    description:
+      'Over a decade of delivering successful projects across diverse industries and technologies.',
   },
   {
     icon: <FaAward />,
     title: 'Quality Assurance',
-    description: 'Rigorous testing and QA processes ensure bug-free, secure, and performant solutions.',
+    description:
+      'Rigorous testing and QA processes ensure bug-free, secure, and performant solutions.',
   },
   {
     icon: <FaUsers />,
     title: 'Expert Team',
-    description: '50+ skilled developers, designers, and project managers ready to bring your vision to life.',
+    description:
+      '50+ skilled developers, designers, and project managers ready to bring your vision to life.',
   },
   {
     icon: <FaCog />,
     title: 'Agile Methodology',
-    description: 'Flexible development process with regular updates, transparency, and quick iterations.',
+    description:
+      'Flexible development process with regular updates, transparency, and quick iterations.',
   },
   {
     icon: <FaShieldAlt />,
     title: 'Security First',
-    description: 'Enterprise-grade security practices, HIPAA compliance, and data protection built-in.',
+    description:
+      'Enterprise-grade security practices, HIPAA compliance, and data protection built-in.',
   },
   {
     icon: <FaHandshake />,

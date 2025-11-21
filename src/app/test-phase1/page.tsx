@@ -94,30 +94,15 @@ export default function TestPhase1Page() {
             <h3 className={styles.demoTitle}>Custom Colors</h3>
             <div className={styles.iconGrid}>
               <div className={styles.iconDemo}>
-                <GlassIcon
-                  icon={<FaHeart />}
-                  size="medium"
-                  variant="circle"
-                  color="#9B59B6"
-                />
+                <GlassIcon icon={<FaHeart />} size="medium" variant="circle" color="#9B59B6" />
                 <span className={styles.label}>Purple</span>
               </div>
               <div className={styles.iconDemo}>
-                <GlassIcon
-                  icon={<FaStar />}
-                  size="medium"
-                  variant="square"
-                  color="#3498DB"
-                />
+                <GlassIcon icon={<FaStar />} size="medium" variant="square" color="#3498DB" />
                 <span className={styles.label}>Blue</span>
               </div>
               <div className={styles.iconDemo}>
-                <GlassIcon
-                  icon={<FaRocket />}
-                  size="medium"
-                  variant="circle"
-                  color="#E74C3C"
-                />
+                <GlassIcon icon={<FaRocket />} size="medium" variant="circle" color="#E74C3C" />
                 <span className={styles.label}>Red</span>
               </div>
             </div>

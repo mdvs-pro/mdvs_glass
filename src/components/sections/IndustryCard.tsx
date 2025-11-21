@@ -28,9 +28,7 @@ export default function IndustryCard({
 
       <h3 className={styles.name}>{name}</h3>
 
-      {projectCount && (
-        <div className={styles.projectCount}>{projectCount}+ Projects</div>
-      )}
+      {projectCount && <div className={styles.projectCount}>{projectCount}+ Projects</div>}
 
       <p className={styles.description}>{description}</p>
 

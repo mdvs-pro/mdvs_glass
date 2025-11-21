@@ -8,7 +8,7 @@ export default function TestTagsPage() {
   const [tags, setTags] = useState(['React', 'TypeScript', 'Next.js'])
 
   const removeTag = (tagToRemove: string) => {
-    setTags(tags.filter((tag) => tag !== tagToRemove))
+    setTags(tags.filter(tag => tag !== tagToRemove))
   }
 
   return (
@@ -64,30 +64,20 @@ export default function TestTagsPage() {
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Removable (кліккайте ×)</h2>
           <div className={styles.tagRow}>
-            {tags.map((tag) => (
-              <GlassTag
-                key={tag}
-                variant="tech"
-                removable
-                onRemove={() => removeTag(tag)}
-              >
+            {tags.map(tag => (
+              <GlassTag key={tag} variant="tech" removable onRemove={() => removeTag(tag)}>
                 {tag}
               </GlassTag>
             ))}
           </div>
-          {tags.length === 0 && (
-            <p className={styles.emptyState}>Всі tags видалено</p>
-          )}
+          {tags.length === 0 && <p className={styles.emptyState}>Всі tags видалено</p>}
         </section>
 
         {/* Clickable */}
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Clickable</h2>
           <div className={styles.tagRow}>
-            <GlassTag
-              variant="primary"
-              onClick={() => alert('Primary clicked!')}
-            >
+            <GlassTag variant="primary" onClick={() => alert('Primary clicked!')}>
               Click me
             </GlassTag>
             <GlassTag variant="tech" onClick={() => alert('Tech clicked!')}>
@@ -98,14 +88,9 @@ export default function TestTagsPage() {
 
         {/* Animated Background */}
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>
-            З динамічним фоном (animated)
-          </h2>
+          <h2 className={styles.sectionTitle}>З динамічним фоном (animated)</h2>
           <div className={styles.tagRow}>
-            <GlassTag
-              variant="primary"
-              backgroundImage="/images/button-backgrounds/103811.jpg"
-            >
+            <GlassTag variant="primary" backgroundImage="/images/button-backgrounds/103811.jpg">
               Primary
             </GlassTag>
             <GlassTag
@@ -201,9 +186,9 @@ export default function TestTagsPage() {
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Props</h2>
           <div className={styles.props}>
-            <code>variant</code> - "primary" | "secondary" | "outline" | "tech"
+            <code>variant</code> - &quot;primary&quot; | &quot;secondary&quot; | &quot;outline&quot; | &quot;tech&quot;
             <br />
-            <code>size</code> - "small" | "medium"
+            <code>size</code> - &quot;small&quot; | &quot;medium&quot;
             <br />
             <code>icon</code> - ReactNode (іконка)
             <br />
@@ -213,8 +198,7 @@ export default function TestTagsPage() {
             <br />
             <code>onClick</code> - callback при кліку (робить tag clickable)
             <br />
-            <code>backgroundImage</code> - шлях до зображення для динамічного фону
-            (опційно)
+            <code>backgroundImage</code> - шлях до зображення для динамічного фону (опційно)
           </div>
         </section>
       </div>
