@@ -28,7 +28,7 @@ export default function HomePage() {
             <div className={styles.heroActions}>
               <LiquidGlassButton
                 href="/contact"
-                backgroundImage="/images/button-backgrounds/2148862133.jpg"
+                backgroundImage="/mdvs_glass/images/button-backgrounds/2148862133.jpg"
               >
                 <span style={{ fontSize: '1.1rem' }}>Start Your Project</span>
               </LiquidGlassButton>
