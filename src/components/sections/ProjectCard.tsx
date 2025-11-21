@@ -26,7 +26,7 @@ export default function ProjectCard({
     <div className={`${styles.projectCard} ${variant === 'featured' ? styles.featured : ''}`}>
       {/* Project Image */}
       <div className={styles.imageWrapper}>
-        <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH}/${image}`} alt={title} width={600} height={400} className={styles.projectImage} />
+        <Image src={`/mdvs_glass/${image}`} alt={title} width={600} height={400} className={styles.projectImage} />
         <div className={styles.imageOverlay}></div>
       </div>
 
